@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>znxsOne</title>
+      <link href="/2023/06/18/znxsOne/"/>
+      <url>/2023/06/18/znxsOne/</url>
+      
+        <content type="html"><![CDATA[<h1 id="我的First-Blog"><a href="#我的First-Blog" class="headerlink" title="我的First Blog"></a>我的First Blog</h1><p>  <img src="http://znxs.eliotlib.xyz/znxs/845129.png" class="lazyload placeholder" data-srcset="http://znxs.eliotlib.xyz/znxs/845129.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="测试图片"></p><p>测试图片</p><h3 id="请欣赏我的舞蹈吧"><a href="#请欣赏我的舞蹈吧" class="headerlink" title="请欣赏我的舞蹈吧"></a>请欣赏我的舞蹈吧</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分类1 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 标签1 </tag>
+            
+            <tag> 标签2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/06/18/hello-world/"/>
+      <url>/2023/06/18/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试模板</title>
+      <link href="/2023/06/17/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF/"/>
+      <url>/2023/06/17/%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="测试我的页面"><a href="#测试我的页面" class="headerlink" title="测试我的页面"></a>测试我的页面</h3><p>🐶  Yeal！🐶</p><p><img src="http://znxs.eliotlib.xyz/znxs/961638.png" class="lazyload placeholder" data-srcset="http://znxs.eliotlib.xyz/znxs/961638.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="测试图片"></p><blockquote><p>如果访问很慢就是用外网访问，Github是这样的🐶</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>znxsTwo</title>
+      <link href="/2023/06/14/znxsTwo/"/>
+      <url>/2023/06/14/znxsTwo/</url>
+      
+        <content type="html"><![CDATA[<h3 id="这是我的第二个页面"><a href="#这是我的第二个页面" class="headerlink" title="这是我的第二个页面"></a>这是我的第二个页面</h3><p>还在测试中</p><p>🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果不想工作了，请在公司数据库中输入</span></span><br><span class="line"><span class="built_in">rm</span> -f */</span><br></pre></td></tr></table></figure><h3 id="🐶Yeah-🐶"><a href="#🐶Yeah-🐶" class="headerlink" title="🐶Yeah!🐶"></a>🐶Yeah!🐶</h3><p><img src="http://znxs.eliotlib.xyz/znxs/824467.jpg" class="lazyload placeholder" data-srcset="http://znxs.eliotlib.xyz/znxs/824467.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="图片显示"></p><hr><p>测试显示主页图片</p><p><img src="http://znxs.eliotlib.xyz/znxs/1059301.png" class="lazyload placeholder" data-srcset="http://znxs.eliotlib.xyz/znxs/1059301.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1059301"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试二</title>
+      <link href="/2023/06/14/test2/"/>
+      <url>/2023/06/14/test2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Test2"><a href="#Test2" class="headerlink" title="Test2"></a>Test2</h3><p>这是我的第二个页面，用于测试</p><p><img src="http://znxs.eliotlib.xyz/znxs/824467.jpg" class="lazyload placeholder" data-srcset="http://znxs.eliotlib.xyz/znxs/824467.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="测试图片"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
