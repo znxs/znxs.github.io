@@ -986,10 +986,10 @@
     <!-- 首页座右铭 -->
     
   <div class="motto">
-      <h3 class="motto-title">座右铭</h3>
+      <h3 class="motto-title">Motto</h3>
       <div class="motto-content">
         <p>
-          沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜  
+          去看世界，冲破艰难。看见世界，身临其境。贴近彼此，感受生活。这就是生活的目的。  
         </p> 
       </div>
   </div>
@@ -1053,10 +1053,27 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 0px"
+        style="height: 30px"
       >
         <ul class="index-notice-content__ul">
           
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a href="/2023/06/28/暑期规划/" title="#博客更新了" style="color:black">
+                      #博客更新了
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:black">
+                    2023-06-28
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1071,7 +1088,7 @@
 <script>
   var seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  var listData = '' || '';
+  var listData = '[object Object]' || '';
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1777,7 +1794,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Jun 28 2023 16:28:12 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Wed Jun 28 2023 16:33:32 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-06-28 日</div>
           
         </div>
