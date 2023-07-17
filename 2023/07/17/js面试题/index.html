@@ -436,10 +436,8 @@
 <li>跨平台性。JavaScript脚本语言不依赖于操作系统,仅需要浏览器的支持。因此一个JavaScript脚本在编写后可以带到任意机器上使用,前提上机器上的浏览器支 持JavaScript脚本语言,目前JavaScript已被大多数的浏览器所支持。</li>
 </ol>
 <h4 id="2-JavaScript的数据类型都有什么？"><a href="#2-JavaScript的数据类型都有什么？" class="headerlink" title="2.JavaScript的数据类型都有什么？"></a>2.JavaScript的数据类型都有什么？</h4><ul>
-<li><p>基本数据类型：Number、String、Boolean、Null、Undefined</p>
-</li>
-<li><p>复杂数据类型：Object（Function、Array、Date、RegExp）</p>
-</li>
+<li>基本数据类型：Number、String、Boolean、Null、Undefined</li>
+<li>复杂数据类型：Object（Function、Array、Date、RegExp）</li>
 </ul>
 <p><strong>如何判断某变量是否为数组数据类型？</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="title class_">Array</span>.<span class="property">isArray</span> === <span class="string">&quot;undefined&quot;</span>)&#123;</span><br><span class="line">    <span class="title class_">Array</span>.<span class="property">isArray</span> = <span class="keyword">function</span>(<span class="params">arg</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(arg)===<span class="string">&quot;[object Array]&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
