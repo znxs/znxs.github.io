@@ -772,8 +772,7 @@
 <blockquote>
 <p>逻辑运算符优先级： ！&gt; &amp;&amp; &gt;  ||  </p>
 </blockquote>
-<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h3><p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25BA%258C%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/1671017924981.png" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25BA%258C%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/1671017924981.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="67101792498"></p>
-<h3 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h3><p>分支语句可以根据条件判定真假，来选择性的执行想要的代码</p>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h3><h3 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h3><p>分支语句可以根据条件判定真假，来选择性的执行想要的代码</p>
 <p>分支语句包含：</p>
 <ol>
 <li>if分支语句（重点）</li>
@@ -849,8 +848,7 @@
 <p>2.for(;;) 也可以来构造“无限”循环，同样需要使用break退出循环。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无限循环  </span></span><br><span class="line"><span class="comment">// 需求： 页面会一直弹窗询问你爱我吗？</span></span><br><span class="line"><span class="comment">// (1). 如果用户输入的是 &#x27;爱&#x27;，则退出弹窗</span></span><br><span class="line"><span class="comment">// (2). 否则一直弹窗询问</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. while(true) 无限循环</span></span><br><span class="line"><span class="comment">// while (true) &#123;</span></span><br><span class="line"><span class="comment">//   let love = prompt(&#x27;你爱我吗?&#x27;)</span></span><br><span class="line"><span class="comment">//   if (love === &#x27;爱&#x27;) &#123;</span></span><br><span class="line"><span class="comment">//     break</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. for(;;) 无限循环</span></span><br><span class="line"><span class="keyword">for</span> (; ;) &#123;</span><br><span class="line">  <span class="keyword">let</span> love = <span class="title function_">prompt</span>(<span class="string">&#x27;你爱我吗?&#x27;</span>)</span><br><span class="line">  <span class="keyword">if</span> (love === <span class="string">&#x27;爱&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="综合案例-ATM存取款机"><a href="#综合案例-ATM存取款机" class="headerlink" title="综合案例-ATM存取款机"></a>综合案例-ATM存取款机</h2><p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25BA%258C%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/1671018781557.png" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25BA%258C%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/1671018781557.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="67101878155"></p>
-<p>分析：</p>
+<h2 id="综合案例-ATM存取款机"><a href="#综合案例-ATM存取款机" class="headerlink" title="综合案例-ATM存取款机"></a>综合案例-ATM存取款机</h2><p>分析：</p>
 <p>①：提示输入框写到循环里面（无限循环）</p>
 <p>②：用户输入4则退出循环 break</p>
 <p>③：提前准备一个金额预先存储一个数额 money</p>
@@ -912,22 +910,18 @@
 <p>注意：<code>for</code> 的语法结构更简洁，故 <code>for</code> 循环的使用频次会更多。</p>
 </blockquote>
 <h3 id="循环嵌套"><a href="#循环嵌套" class="headerlink" title="循环嵌套"></a>循环嵌套</h3><p>利用循环的知识来对比一个简单的天文知识，我们知道地球在自转的同时也在围绕太阳公转，如果把自转和公转都看成是循环的话，就相当于是循环中又嵌套了另一个循环。</p>
-<p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/universe.gif" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/universe.gif" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="universe"></p>
 <p>实际上 JavaScript 中任何一种循环语句都支持循环的嵌套，如下代码所示：</p>
-<p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918261399.png" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918261399.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="64791826139"></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 1. 外面的循环 记录第n天 </span><br><span class="line">for (let i = 1; i &lt; 4; i++) &#123;</span><br><span class="line">    document.write(`第$&#123;i&#125;天 <span class="tag">&lt;<span class="name">br</span>&gt;</span>`)</span><br><span class="line">    // 2. 里层的循环记录 几个单词</span><br><span class="line">    for (let j = 1; j &lt; 6; j++) &#123;</span><br><span class="line">        document.write(`记住第$&#123;j&#125;个单词<span class="tag">&lt;<span class="name">br</span>&gt;</span>`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>记住，外层循环循环一次，里层循环循环全部</p>
 <h4 id="倒三角"><a href="#倒三角" class="headerlink" title="倒三角"></a>倒三角</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 外层打印几行</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 里层打印几个星星</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;★&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;br&gt;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p> <img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918678956.png" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918678956.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="64791867895"></p>
 <h4 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h4><p>样式css</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid pink;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">192</span>, <span class="number">203</span>, .<span class="number">4</span>);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">192</span>, <span class="number">203</span>, .<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: hotpink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>javascript </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 外层打印几行</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 里层打印几个星星</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">        <span class="comment">// 只需要吧 ★ 换成  1 x 1 = 1   </span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`</span></span><br><span class="line"><span class="string">		&lt;div&gt; <span class="subst">$&#123;j&#125;</span> x <span class="subst">$&#123;i&#125;</span> = <span class="subst">$&#123;j * i&#125;</span> &lt;/div&gt;</span></span><br><span class="line"><span class="string">     `</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;br&gt;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918734677.png" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E4%25B8%2589%25E5%25A4%25A9/02-%25E7%25AC%2594%25E8%25AE%25B0/assets/1647918734677.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="64791873467"></p>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><blockquote>
 <p>知道什么是数组及其应用的场景，掌握数组声明及访问的语法。</p>
 </blockquote>
@@ -982,7 +976,7 @@
 </blockquote>
 <h3 id="声明和调用"><a href="#声明和调用" class="headerlink" title="声明和调用"></a>声明和调用</h3><p>函数可以把具有相同或相似逻辑的代码“包裹”起来，通过函数调用执行这些被“包裹”的代码逻辑，这么做的优势是有利于精简代码方便复用。</p>
 <h4 id="声明（定义）"><a href="#声明（定义）" class="headerlink" title="声明（定义）"></a>声明（定义）</h4><p>声明（定义）一个完整函数包括关键字、函数名、形式参数、函数体、返回值5个部分</p>
-<p><img src="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E5%259B%259B%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/function.jpg" class="lazyload placeholder" data-srcset="D:/BaiduNetdiskDownload/1.JavaScript%25E5%259F%25BA%25E7%25A1%2580/JavaScript%25E5%259F%25BA%25E7%25A1%2580%25E7%25AC%25AC%25E5%259B%259B%25E5%25A4%25A9/03-%25E7%25AC%2594%25E8%25AE%25B0/assets/function.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="function"></p>
+<p><img src="https://blog.znxs.vip/znxs/function.jpg" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/function.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="function"></p>
 <h4 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h4><p>声明（定义）的函数必须调用才会真正被执行，使用 <code>()</code> 调用函数。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript 基础 - 声明和调用<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 声明（定义）了最简单的函数，既没有形式参数，也没有返回值</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;嗨~&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 函数调用，这些函数体内的代码逻辑会被执行</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 函数名()</span></span></span><br><span class="line"><span class="language-javascript">        </span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">sayHi</span>()</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 可以重复被调用，多少次都可以</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">sayHi</span>()</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1462,6 +1456,27 @@
             
 
             <div class="post-img-box">
+              <a href="/2023/07/17/Es6/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-17</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/17/Es6/">Es6</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/2023/07/06/webAPIs/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-e434e3a2888fb4efb1844845b8791d1f_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-e434e3a2888fb4efb1844845b8791d1f_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -1537,27 +1552,6 @@
                 
               </div>
               <a class="post-title" href="/2023/06/20/znxsOne/">znxsOne</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/06/18/hello-world/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">06-18</span>
-                
-              </div>
-              <a class="post-title" href="/2023/06/18/hello-world/">Hello World</a>
             </div>
           </div>
         
