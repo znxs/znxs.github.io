@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>碧蓝档案池子[更] | znxs</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    
+        <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    
+
+    
+        <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  
+  <!-- 预加载动画 -->
+  <!-- 页面预加载动画 -->
+
+  
+    <div class="preloader_3" id="loader">
+  <div class="bar">
+    <div class="ball"></div>
+  </div>
+</div>
+
+  
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+</script>
+
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
+  id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">znxs</h3>
+      <h5 class="drawer-box-head_desc">少年没有乌托邦,心向远方自明朗</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/znxs">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">znxs</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/znxs" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://blog.znxs.vip/znxs/adf8b9a2cc61b686f98a8d6a0d015abf211082a5.jpg@1256w_884h_!web-article-pic.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        碧蓝档案池子[更]
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2023-08-07 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Game/" class="post-detail-header_category">
+              Game
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p><img src="https://blog.znxs.vip/znxs/adf8b9a2cc61b686f98a8d6a0d015abf211082a5.jpg@1256w_884h_!web-article-pic.webp" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/adf8b9a2cc61b686f98a8d6a0d015abf211082a5.jpg@1256w_884h_!web-article-pic.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<h2 id="BA历年池子✨✨"><a href="#BA历年池子✨✨" class="headerlink" title="BA历年池子✨✨"></a>BA历年池子✨✨</h2><blockquote>
+<p>有点长😓</p>
+</blockquote>
+<h4 id="白子-x2F-星野"><a href="#白子-x2F-星野" class="headerlink" title="白子&#x2F;星野"></a>白子&#x2F;星野</h4><p><img src="https://static.wikia.nocookie.net/blue-archive/images/e/e0/Gacha_Banner_01.png/revision/latest/scale-to-width-down/1000?cb=20210208132448" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e0/Gacha_Banner_01.png/revision/latest/scale-to-width-down/1000?cb=20210208132448" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="白子/星野"></p>
+<h4 id="静山真白"><a href="#静山真白" class="headerlink" title="静山真白"></a>静山真白<img src="https://webusstatic.yo-star.com/uy0news/ba/e469f219b1a629f16cd23184df826eef.png" class="lazyload placeholder" data-srcset="https://webusstatic.yo-star.com/uy0news/ba/e469f219b1a629f16cd23184df826eef.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="静山真白"></h4><h4 id="泉奈-x2F-静子"><a href="#泉奈-x2F-静子" class="headerlink" title="泉奈&#x2F;静子"></a>泉奈&#x2F;静子<img src="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="泉奈/静子"></h4><h4 id="晴奈"><a href="#晴奈" class="headerlink" title="晴奈"></a>晴奈<img src="https://static.wikia.nocookie.net/blue-archive/images/0/06/Gacha_Banner_04.png/revision/latest/scale-to-width-down/1000?cb=20210308133106" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/06/Gacha_Banner_04.png/revision/latest/scale-to-width-down/1000?cb=20210308133106" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="晴奈"></h4><h4 id="爱露"><a href="#爱露" class="headerlink" title="爱露"></a>爱露<img src="https://static.wikia.nocookie.net/blue-archive/images/1/15/Gacha_Banner_05.png/revision/latest/scale-to-width-down/1000?cb=20210316122421" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/15/Gacha_Banner_05.png/revision/latest/scale-to-width-down/1000?cb=20210316122421" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱露"></h4><h4 id="爱丽丝"><a href="#爱丽丝" class="headerlink" title="爱丽丝"></a>爱丽丝<img src="https://static.wikia.nocookie.net/blue-archive/images/3/30/Gacha_Banner_06.png/revision/latest/scale-to-width-down/1000?cb=20210324055332" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/30/Gacha_Banner_06.png/revision/latest/scale-to-width-down/1000?cb=20210324055332" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱丽丝"></h4><h4 id="绿-x2F-桃井"><a href="#绿-x2F-桃井" class="headerlink" title="绿&#x2F;桃井"></a>绿&#x2F;桃井<img src="https://static.wikia.nocookie.net/blue-archive/images/7/70/Gacha_Banner_07.png/revision/latest/scale-to-width-down/1000?cb=20210405114907" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/70/Gacha_Banner_07.png/revision/latest/scale-to-width-down/1000?cb=20210405114907" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="绿/桃井"></h4><h4 id="花凛"><a href="#花凛" class="headerlink" title="花凛"></a>花凛<img src="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_08.png/revision/latest/scale-to-width-down/1000?cb=20210419154933" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_08.png/revision/latest/scale-to-width-down/1000?cb=20210419154933" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="花凛"></h4><h4 id="切里诺"><a href="#切里诺" class="headerlink" title="切里诺"></a>切里诺<img src="https://webusstatic.yo-star.com/uy0news/ba/f2213ca49ea65d34faa840139ae9e12e.jpg" class="lazyload placeholder" data-srcset="https://webusstatic.yo-star.com/uy0news/ba/f2213ca49ea65d34faa840139ae9e12e.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="切里诺"></h4><h4 id="柚子"><a href="#柚子" class="headerlink" title="柚子"></a>柚子<img src="https://static.wikia.nocookie.net/blue-archive/images/3/32/Gacha_Banner_10.png/revision/latest/scale-to-width-down/1000?cb=20210512060804" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/32/Gacha_Banner_10.png/revision/latest/scale-to-width-down/1000?cb=20210512060804" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="柚子"></h4><h4 id="梓-x2F-花子"><a href="#梓-x2F-花子" class="headerlink" title="梓&#x2F;花子"></a>梓&#x2F;花子<img src="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="梓/花子"></h4><h4 id="小春"><a href="#小春" class="headerlink" title="小春"></a>小春<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e5/Gacha_Banner_12.png/revision/latest/scale-to-width-down/1000?cb=20210609094755" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e5/Gacha_Banner_12.png/revision/latest/scale-to-width-down/1000?cb=20210609094755" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="小春"></h4><h4 id="日富美"><a href="#日富美" class="headerlink" title="日富美"></a>日富美<img src="https://static.wikia.nocookie.net/blue-archive/images/a/a0/Gacha_Banner_13.png/revision/latest/scale-to-width-down/1000?cb=20210623060434" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/a0/Gacha_Banner_13.png/revision/latest/scale-to-width-down/1000?cb=20210623060434" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日富美"></h4><h4 id="水梓"><a href="#水梓" class="headerlink" title="水梓"></a>水梓<img src="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水梓"></h4><h4 id="水真白"><a href="#水真白" class="headerlink" title="水真白"></a>水真白<img src="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水真白"></h4><h4 id="水日富美"><a href="#水日富美" class="headerlink" title="水日富美"></a>水日富美<img src="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日富美"></h4><h4 id="水日奈"><a href="#水日奈" class="headerlink" title="水日奈"></a>水日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日奈"></h4><h4 id="水伊织"><a href="#水伊织" class="headerlink" title="水伊织"></a>水伊织<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水伊织"></h4><h4 id="骑行白子"><a href="#骑行白子" class="headerlink" title="骑行白子"></a>骑行白子<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="骑行白子"></h4><h4 id="幼瞬-x2F-桐乃"><a href="#幼瞬-x2F-桐乃" class="headerlink" title="幼瞬&#x2F;桐乃"></a>幼瞬&#x2F;桐乃<img src="https://static.wikia.nocookie.net/blue-archive/images/f/f0/Gacha_Banner_20.png/revision/latest/scale-to-width-down/1000?cb=20210825054857" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/f0/Gacha_Banner_20.png/revision/latest/scale-to-width-down/1000?cb=20210825054857" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="幼瞬/桐乃"></h4><h4 id="纱凌私服"><a href="#纱凌私服" class="headerlink" title="纱凌私服"></a>纱凌私服<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b0/Gacha_Banner_21.png/revision/latest/scale-to-width-down/1000?cb=20210908055646" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b0/Gacha_Banner_21.png/revision/latest/scale-to-width-down/1000?cb=20210908055646" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="纱凌私服"></h4><h4 id="响"><a href="#响" class="headerlink" title="响"></a>响<img src="https://static.wikia.nocookie.net/blue-archive/images/a/a9/Gacha_Banner_22.png/revision/latest/scale-to-width-down/1000?cb=20210922053057" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/a9/Gacha_Banner_22.png/revision/latest/scale-to-width-down/1000?cb=20210922053057" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="响"></h4><h4 id="兔女郎尼禄"><a href="#兔女郎尼禄" class="headerlink" title="兔女郎尼禄"></a>兔女郎尼禄<img src="https://static.wikia.nocookie.net/blue-archive/images/f/fb/Gacha_Banner_23.png/revision/latest/scale-to-width-down/1000?cb=20210928113501" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/fb/Gacha_Banner_23.png/revision/latest/scale-to-width-down/1000?cb=20210928113501" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎尼禄"></h4><h4 id="兔女郎花凛"><a href="#兔女郎花凛" class="headerlink" title="兔女郎花凛"></a>兔女郎花凛<img src="https://static.wikia.nocookie.net/blue-archive/images/1/1b/Gacha_Banner_24.png/revision/latest/scale-to-width-down/1000?cb=20210928113504" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/1b/Gacha_Banner_24.png/revision/latest/scale-to-width-down/1000?cb=20210928113504" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎花凛"></h4><h4 id="兔女郎明日奈"><a href="#兔女郎明日奈" class="headerlink" title="兔女郎明日奈"></a>兔女郎明日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/3/3e/Gacha_Banner_25.png/revision/latest/scale-to-width-down/1000?cb=20211011121247" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/3e/Gacha_Banner_25.png/revision/latest/scale-to-width-down/1000?cb=20211011121247" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎明日奈"></h4><h4 id="夏-x2F-玛丽"><a href="#夏-x2F-玛丽" class="headerlink" title="夏&#x2F;玛丽"></a>夏&#x2F;玛丽<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="夏/玛丽"></h4><h4 id="初音未来"><a href="#初音未来" class="headerlink" title="初音未来"></a>初音未来<img src="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_27.png/revision/latest/scale-to-width-down/1000?cb=20211031050616" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_27.png/revision/latest/scale-to-width-down/1000?cb=20211031050616" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="初音未来"></h4><h4 id="亚子"><a href="#亚子" class="headerlink" title="亚子"></a>亚子<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c3/Gacha_Banner_28.png/revision/latest/scale-to-width-down/1000?cb=20211116132931" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c3/Gacha_Banner_28.png/revision/latest/scale-to-width-down/1000?cb=20211116132931" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="亚子"></h4><h4 id="切里诺温泉"><a href="#切里诺温泉" class="headerlink" title="切里诺温泉"></a>切里诺温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_29.png/revision/latest/scale-to-width-down/1000?cb=20211129120946" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_29.png/revision/latest/scale-to-width-down/1000?cb=20211129120946" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="切里诺温泉"></h4><h4 id="千夏温泉"><a href="#千夏温泉" class="headerlink" title="千夏温泉"></a>千夏温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/9/97/Gacha_Banner_30.png/revision/latest/scale-to-width-down/1000?cb=20211129120947" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/97/Gacha_Banner_30.png/revision/latest/scale-to-width-down/1000?cb=20211129120947" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="千夏温泉"></h4><h4 id="和香温泉"><a href="#和香温泉" class="headerlink" title="和香温泉"></a>和香温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b7/Gacha_Banner_31.png/revision/latest/scale-to-width-down/1000?cb=20211214135431" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b7/Gacha_Banner_31.png/revision/latest/scale-to-width-down/1000?cb=20211214135431" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="和香温泉"></h4><h4 id="爱露正月"><a href="#爱露正月" class="headerlink" title="爱露正月"></a>爱露正月<img src="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_32A.png/revision/latest?cb=20220421151621" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_32A.png/revision/latest?cb=20220421151621" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱露正月"></h4><h4 id="睦月正月"><a href="#睦月正月" class="headerlink" title="睦月正月"></a>睦月正月<img src="https://static.wikia.nocookie.net/blue-archive/images/1/17/Gacha_Banner_32B.png/revision/latest?cb=20220421151623" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/17/Gacha_Banner_32B.png/revision/latest?cb=20220421151623" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="睦月正月"></h4><h4 id="芹香正月"><a href="#芹香正月" class="headerlink" title="芹香正月"></a>芹香正月<img src="https://static.wikia.nocookie.net/blue-archive/images/5/56/Gacha_Banner_33.png/revision/latest/scale-to-width-down/1000?cb=20220111160429" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/5/56/Gacha_Banner_33.png/revision/latest/scale-to-width-down/1000?cb=20220111160429" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="芹香正月"></h4><h4 id="若藻"><a href="#若藻" class="headerlink" title="若藻"></a>若藻<img src="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_34.png/revision/latest/scale-to-width-down/1000?cb=20220628090746" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_34.png/revision/latest/scale-to-width-down/1000?cb=20220628090746" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="若藻"></h4><h4 id="濑名"><a href="#濑名" class="headerlink" title="濑名"></a>濑名<img src="https://static.wikia.nocookie.net/blue-archive/images/a/ac/Gacha_Banner_35.png/revision/latest/scale-to-width-down/1000?cb=20220628090813" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/ac/Gacha_Banner_35.png/revision/latest/scale-to-width-down/1000?cb=20220628090813" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="濑名"></h4><h4 id="千寻"><a href="#千寻" class="headerlink" title="千寻"></a>千寻<img src="https://static.wikia.nocookie.net/blue-archive/images/6/60/Gacha_Banner_36.png/revision/latest/scale-to-width-down/1000?cb=20220628090852" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/60/Gacha_Banner_36.png/revision/latest/scale-to-width-down/1000?cb=20220628090852" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="千寻"></h4><h4 id="三森"><a href="#三森" class="headerlink" title="三森"></a>三森<img src="https://static.wikia.nocookie.net/blue-archive/images/a/aa/Gacha_Banner_37.png/revision/latest/scale-to-width-down/1000?cb=20220208142340" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/aa/Gacha_Banner_37.png/revision/latest/scale-to-width-down/1000?cb=20220208142340" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="三森"></h4><h4 id="泉奈-x2F-静子-1"><a href="#泉奈-x2F-静子-1" class="headerlink" title="泉奈&#x2F;静子"></a>泉奈&#x2F;静子<img src="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="泉奈/静子"></h4><h4 id="小春-1"><a href="#小春-1" class="headerlink" title="小春"></a>小春<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e5/Gacha_Banner_12.png/revision/latest/scale-to-width-down/1000?cb=20210609094755" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e5/Gacha_Banner_12.png/revision/latest/scale-to-width-down/1000?cb=20210609094755" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="小春"></h4><h4 id="晴奈-1"><a href="#晴奈-1" class="headerlink" title="晴奈"></a>晴奈<img src="https://static.wikia.nocookie.net/blue-archive/images/0/06/Gacha_Banner_04.png/revision/latest/scale-to-width-down/1000?cb=20210308133106" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/06/Gacha_Banner_04.png/revision/latest/scale-to-width-down/1000?cb=20210308133106" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="晴奈"></h4><h4 id="优"><a href="#优" class="headerlink" title="优"></a>优<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d4/Gacha_Banner_38.png/revision/latest/scale-to-width-down/1000?cb=20220222124718" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d4/Gacha_Banner_38.png/revision/latest/scale-to-width-down/1000?cb=20220222124718" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="优"></h4><h4 id="日向"><a href="#日向" class="headerlink" title="日向"></a>日向<img src="https://static.wikia.nocookie.net/blue-archive/images/e/ea/Gacha_Banner_39.png/revision/latest/scale-to-width-down/1000?cb=20220222124720" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/ea/Gacha_Banner_39.png/revision/latest/scale-to-width-down/1000?cb=20220222124720" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日向"></h4><h4 id="玛利娜"><a href="#玛利娜" class="headerlink" title="玛利娜"></a>玛利娜<img src="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_40.png/revision/latest/scale-to-width-down/1000?cb=20220308132303" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_40.png/revision/latest/scale-to-width-down/1000?cb=20220308132303" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="玛利娜"></h4><h4 id="切里诺-1"><a href="#切里诺-1" class="headerlink" title="切里诺"></a>切里诺<img src="https://webusstatic.yo-star.com/uy0news/ba/f2213ca49ea65d34faa840139ae9e12e.jpg" class="lazyload placeholder" data-srcset="https://webusstatic.yo-star.com/uy0news/ba/f2213ca49ea65d34faa840139ae9e12e.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="切里诺"></h4><h4 id="伊织"><a href="#伊织" class="headerlink" title="伊织"></a>伊织<img src="https://static.wikia.nocookie.net/blue-archive/images/8/84/Gacha_Banner_41.png/revision/latest/scale-to-width-down/1000?cb=20220315135820" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/84/Gacha_Banner_41.png/revision/latest/scale-to-width-down/1000?cb=20220315135820" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="伊织"></h4><h4 id="绿-x2F-桃井-1"><a href="#绿-x2F-桃井-1" class="headerlink" title="绿&#x2F;桃井"></a>绿&#x2F;桃井<img src="https://static.wikia.nocookie.net/blue-archive/images/7/70/Gacha_Banner_07.png/revision/latest/scale-to-width-down/1000?cb=20210405114907" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/70/Gacha_Banner_07.png/revision/latest/scale-to-width-down/1000?cb=20210405114907" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="绿/桃井"></h4><h4 id="宫子"><a href="#宫子" class="headerlink" title="宫子"></a>宫子<img src="https://static.wikia.nocookie.net/blue-archive/images/8/87/Gacha_Banner_42.png/revision/latest/scale-to-width-down/1000?cb=20220322114106" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/87/Gacha_Banner_42.png/revision/latest/scale-to-width-down/1000?cb=20220322114106" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="宫子"></h4><h4 id="咲"><a href="#咲" class="headerlink" title="咲"></a>咲<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_43.png/revision/latest/scale-to-width-down/1000?cb=20220322114108" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_43.png/revision/latest/scale-to-width-down/1000?cb=20220322114108" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="咲"></h4><h4 id="美游"><a href="#美游" class="headerlink" title="美游"></a>美游<img src="https://static.wikia.nocookie.net/blue-archive/images/2/20/Gacha_Banner_44.png/revision/latest/scale-to-width-down/1000?cb=20220405131845" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/20/Gacha_Banner_44.png/revision/latest/scale-to-width-down/1000?cb=20220405131845" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="美游"></h4><h4 id="鹤城"><a href="#鹤城" class="headerlink" title="鹤城"></a>鹤城<img src="https://static.wikia.nocookie.net/blue-archive/images/b/bb/Gacha_Banner_45.png/revision/latest/scale-to-width-down/1000?cb=20220405131847" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/bb/Gacha_Banner_45.png/revision/latest/scale-to-width-down/1000?cb=20220405131847" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="鹤城"></h4><h4 id="水梓-1"><a href="#水梓-1" class="headerlink" title="水梓"></a>水梓<img src="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水梓"></h4><h4 id="水真白-1"><a href="#水真白-1" class="headerlink" title="水真白"></a>水真白<img src="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水真白"></h4><h4 id="水日富美-1"><a href="#水日富美-1" class="headerlink" title="水日富美"></a>水日富美<img src="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日富美"></h4><h4 id="伊吕波"><a href="#伊吕波" class="headerlink" title="伊吕波"></a>伊吕波<img src="https://static.wikia.nocookie.net/blue-archive/images/4/43/Gacha_Banner_46.png/revision/latest/scale-to-width-down/1000?cb=20220426133256" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/43/Gacha_Banner_46.png/revision/latest/scale-to-width-down/1000?cb=20220426133256" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="伊吕波"></h4><h4 id="枫"><a href="#枫" class="headerlink" title="枫"></a>枫<img src="https://static.wikia.nocookie.net/blue-archive/images/f/f3/Gacha_Banner_47.png/revision/latest/scale-to-width-down/1000?cb=20220426133259" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/f3/Gacha_Banner_47.png/revision/latest/scale-to-width-down/1000?cb=20220426133259" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="枫"></h4><h4 id="月咏"><a href="#月咏" class="headerlink" title="月咏"></a>月咏<img src="https://static.wikia.nocookie.net/blue-archive/images/6/69/Gacha_Banner_48.png/revision/latest/scale-to-width-down/1000?cb=20220510131038" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/69/Gacha_Banner_48.png/revision/latest/scale-to-width-down/1000?cb=20220510131038" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="月咏"></h4><h4 id="柚子-1"><a href="#柚子-1" class="headerlink" title="柚子"></a>柚子<img src="https://static.wikia.nocookie.net/blue-archive/images/3/32/Gacha_Banner_10.png/revision/latest/scale-to-width-down/1000?cb=20210512060804" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/32/Gacha_Banner_10.png/revision/latest/scale-to-width-down/1000?cb=20210512060804" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="柚子"></h4><h4 id="美咲"><a href="#美咲" class="headerlink" title="美咲"></a>美咲<img src="https://static.wikia.nocookie.net/blue-archive/images/7/7f/Gacha_Banner_49.png/revision/latest/scale-to-width-down/1000?cb=20220523113846" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/7f/Gacha_Banner_49.png/revision/latest/scale-to-width-down/1000?cb=20220523113846" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="美咲"></h4><h4 id="日和"><a href="#日和" class="headerlink" title="日和"></a>日和<img src="https://static.wikia.nocookie.net/blue-archive/images/1/11/Gacha_Banner_50.png/revision/latest/scale-to-width-down/1000?cb=20220523113848" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/11/Gacha_Banner_50.png/revision/latest/scale-to-width-down/1000?cb=20220523113848" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日和"></h4><p><img src="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_51.png/revision/latest/scale-to-width-down/1000?cb=20220607111941" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_51.png/revision/latest/scale-to-width-down/1000?cb=20220607111941" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="亚津子"></p>
+<h4 id="梓-x2F-花子-1"><a href="#梓-x2F-花子-1" class="headerlink" title="梓&#x2F;花子"></a>梓&#x2F;花子<img src="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="梓/花子"></h4><h4 id="水野宫"><a href="#水野宫" class="headerlink" title="水野宫"></a>水野宫<img src="https://static.wikia.nocookie.net/blue-archive/images/7/73/Gacha_Banner_52.png/revision/latest/scale-to-width-down/1000?cb=20220617154754" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/73/Gacha_Banner_52.png/revision/latest/scale-to-width-down/1000?cb=20220617154754" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水野宫"></h4><h4 id="水若藻"><a href="#水若藻" class="headerlink" title="水若藻"></a>水若藻<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c8/Gacha_Banner_53.png/revision/latest/scale-to-width-down/1000?cb=20220617154756" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c8/Gacha_Banner_53.png/revision/latest/scale-to-width-down/1000?cb=20220617154756" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水若藻"></h4><h4 id="星野"><a href="#星野" class="headerlink" title="星野"></a>星野<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d5/Gacha_Banner_54.png/revision/latest/scale-to-width-down/1000?cb=20220705115847" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d5/Gacha_Banner_54.png/revision/latest/scale-to-width-down/1000?cb=20220705115847" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="星野"></h4><h4 id="日奈"><a href="#日奈" class="headerlink" title="日奈"></a>日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/2/2f/Gacha_Banner_55.png/revision/latest/scale-to-width-down/1000?cb=20220705115849" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/2f/Gacha_Banner_55.png/revision/latest/scale-to-width-down/1000?cb=20220705115849" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日奈"></h4><h4 id="水星野"><a href="#水星野" class="headerlink" title="水星野"></a>水星野<img src="https://static.wikia.nocookie.net/blue-archive/images/8/85/Gacha_Banner_56.png/revision/latest/scale-to-width-down/1000?cb=20220719123931" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/85/Gacha_Banner_56.png/revision/latest/scale-to-width-down/1000?cb=20220719123931" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水星野"></h4><h4 id="水泉奈"><a href="#水泉奈" class="headerlink" title="水泉奈"></a>水泉奈<img src="https://static.wikia.nocookie.net/blue-archive/images/6/6b/Gacha_Banner_57.png/revision/latest/scale-to-width-down/1000?cb=20220724075635" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/6b/Gacha_Banner_57.png/revision/latest/scale-to-width-down/1000?cb=20220724075635" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水泉奈"></h4><h4 id="水千寺"><a href="#水千寺" class="headerlink" title="水千寺"></a>水千寺<img src="https://static.wikia.nocookie.net/blue-archive/images/3/3d/Gacha_Banner_58.png/revision/latest/scale-to-width-down/1000?cb=20220724075636" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/3d/Gacha_Banner_58.png/revision/latest/scale-to-width-down/1000?cb=20220724075636" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水千寺"></h4><h4 id="骑行白子-1"><a href="#骑行白子-1" class="headerlink" title="骑行白子"></a>骑行白子<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="骑行白子"></h4><h4 id="爱丽丝-1"><a href="#爱丽丝-1" class="headerlink" title="爱丽丝"></a>爱丽丝<img src="https://static.wikia.nocookie.net/blue-archive/images/3/30/Gacha_Banner_06.png/revision/latest/scale-to-width-down/1000?cb=20210324055332" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/30/Gacha_Banner_06.png/revision/latest/scale-to-width-down/1000?cb=20210324055332" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱丽丝"></h4><h4 id="纱织"><a href="#纱织" class="headerlink" title="纱织"></a>纱织<img src="https://static.wikia.nocookie.net/blue-archive/images/b/bc/Gacha_Banner_59.png/revision/latest/scale-to-width-down/1000?cb=20220808123759" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/bc/Gacha_Banner_59.png/revision/latest/scale-to-width-down/1000?cb=20220808123759" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="纱织"></h4><h4 id="爱露-1"><a href="#爱露-1" class="headerlink" title="爱露"></a>爱露<img src="https://static.wikia.nocookie.net/blue-archive/images/1/15/Gacha_Banner_05.png/revision/latest/scale-to-width-down/1000?cb=20210316122421" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/15/Gacha_Banner_05.png/revision/latest/scale-to-width-down/1000?cb=20210316122421" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱露"></h4><h4 id="萌绘"><a href="#萌绘" class="headerlink" title="萌绘"></a>萌绘<img src="https://static.wikia.nocookie.net/blue-archive/images/3/38/Gacha_Banner_60.png/revision/latest/scale-to-width-down/1000?cb=20220823122526" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/38/Gacha_Banner_60.png/revision/latest/scale-to-width-down/1000?cb=20220823122526" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="萌绘"></h4><h4 id="和纱"><a href="#和纱" class="headerlink" title="和纱"></a>和纱<img src="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_61.png/revision/latest/scale-to-width-down/1000?cb=20220823122528" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_61.png/revision/latest/scale-to-width-down/1000?cb=20220823122528" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="和纱"></h4><h4 id="水日奈-1"><a href="#水日奈-1" class="headerlink" title="水日奈"></a>水日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日奈"></h4><h4 id="水伊织-1"><a href="#水伊织-1" class="headerlink" title="水伊织"></a>水伊织<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水伊织"></h4><h4 id="夏-x2F-玛丽-1"><a href="#夏-x2F-玛丽-1" class="headerlink" title="夏&#x2F;玛丽"></a>夏&#x2F;玛丽<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="夏/玛丽"></h4><h4 id="瞬"><a href="#瞬" class="headerlink" title="瞬"></a>瞬<img src="https://static.wikia.nocookie.net/blue-archive/images/7/75/Gacha_Banner_62.png/revision/latest/scale-to-width-down/1000?cb=20220913121313" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/75/Gacha_Banner_62.png/revision/latest/scale-to-width-down/1000?cb=20220913121313" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="瞬"></h4><h4 id="心奈"><a href="#心奈" class="headerlink" title="心奈"></a>心奈<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b1/Gacha_Banner_63.png/revision/latest/scale-to-width-down/1000?cb=20220920122848" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b1/Gacha_Banner_63.png/revision/latest/scale-to-width-down/1000?cb=20220920122848" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="心奈"></h4><h4 id="幼瞬-x2F-桐乃-1"><a href="#幼瞬-x2F-桐乃-1" class="headerlink" title="幼瞬&#x2F;桐乃"></a>幼瞬&#x2F;桐乃<img src="https://static.wikia.nocookie.net/blue-archive/images/f/f0/Gacha_Banner_20.png/revision/latest/scale-to-width-down/1000?cb=20210825054857" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/f0/Gacha_Banner_20.png/revision/latest/scale-to-width-down/1000?cb=20210825054857" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="幼瞬/桐乃"></h4><h4 id="纱凌私服-1"><a href="#纱凌私服-1" class="headerlink" title="纱凌私服"></a>纱凌私服<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b0/Gacha_Banner_21.png/revision/latest/scale-to-width-down/1000?cb=20210908055646" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b0/Gacha_Banner_21.png/revision/latest/scale-to-width-down/1000?cb=20210908055646" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="纱凌私服"></h4><h4 id="歌原应援团"><a href="#歌原应援团" class="headerlink" title="歌原应援团"></a>歌原应援团<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d2/Gacha_Banner_64.png/revision/latest/scale-to-width-down/1000?cb=20220927124426" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d2/Gacha_Banner_64.png/revision/latest/scale-to-width-down/1000?cb=20220927124426" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="歌原应援团"></h4><h4 id="诺亚"><a href="#诺亚" class="headerlink" title="诺亚"></a>诺亚<img src="https://static.wikia.nocookie.net/blue-archive/images/1/16/Gacha_Banner_65.png/revision/latest/scale-to-width-down/1000?cb=20220927124434" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/16/Gacha_Banner_65.png/revision/latest/scale-to-width-down/1000?cb=20220927124434" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="诺亚"></h4><h4 id="兔女郎茜"><a href="#兔女郎茜" class="headerlink" title="兔女郎茜"></a>兔女郎茜<img src="https://static.wikia.nocookie.net/blue-archive/images/3/3f/Gacha_Banner_66.png/revision/latest/scale-to-width-down/1000?cb=20221011121900" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/3f/Gacha_Banner_66.png/revision/latest/scale-to-width-down/1000?cb=20221011121900" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎茜"></h4><h4 id="兔女郎尼禄-1"><a href="#兔女郎尼禄-1" class="headerlink" title="兔女郎尼禄"></a>兔女郎尼禄<img src="https://static.wikia.nocookie.net/blue-archive/images/f/fb/Gacha_Banner_23.png/revision/latest/scale-to-width-down/1000?cb=20210928113501" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/fb/Gacha_Banner_23.png/revision/latest/scale-to-width-down/1000?cb=20210928113501" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎尼禄"></h4><h4 id="兔女郎花凛-1"><a href="#兔女郎花凛-1" class="headerlink" title="兔女郎花凛"></a>兔女郎花凛<img src="https://static.wikia.nocookie.net/blue-archive/images/1/1b/Gacha_Banner_24.png/revision/latest/scale-to-width-down/1000?cb=20210928113504" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/1b/Gacha_Banner_24.png/revision/latest/scale-to-width-down/1000?cb=20210928113504" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎花凛"></h4><h4 id="兔女郎明日奈-1"><a href="#兔女郎明日奈-1" class="headerlink" title="兔女郎明日奈"></a>兔女郎明日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/3/3e/Gacha_Banner_25.png/revision/latest/scale-to-width-down/1000?cb=20211011121247" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/3e/Gacha_Banner_25.png/revision/latest/scale-to-width-down/1000?cb=20211011121247" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎明日奈"></h4><h4 id="响-1"><a href="#响-1" class="headerlink" title="响"></a>响<img src="https://static.wikia.nocookie.net/blue-archive/images/a/a9/Gacha_Banner_22.png/revision/latest/scale-to-width-down/1000?cb=20210922053057" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/a9/Gacha_Banner_22.png/revision/latest/scale-to-width-down/1000?cb=20210922053057" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="响"></h4><h4 id="亚子-1"><a href="#亚子-1" class="headerlink" title="亚子"></a>亚子<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c3/Gacha_Banner_28.png/revision/latest/scale-to-width-down/1000?cb=20211116132931" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c3/Gacha_Banner_28.png/revision/latest/scale-to-width-down/1000?cb=20211116132931" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="亚子"></h4><h4 id="玛丽体操服"><a href="#玛丽体操服" class="headerlink" title="玛丽体操服"></a>玛丽体操服<img src="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_67.png/revision/latest/scale-to-width-down/1000?cb=20221025101707" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_67.png/revision/latest/scale-to-width-down/1000?cb=20221025101707" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="玛丽体操服"></h4><h4 id="优香体操服"><a href="#优香体操服" class="headerlink" title="优香体操服"></a>优香体操服<img src="https://static.wikia.nocookie.net/blue-archive/images/7/77/Gacha_Banner_68.png/revision/latest/scale-to-width-down/1000?cb=20221025101720" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/77/Gacha_Banner_68.png/revision/latest/scale-to-width-down/1000?cb=20221025101720" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="优香体操服"></h4><h4 id="真纪"><a href="#真纪" class="headerlink" title="真纪"></a>真纪<img src="https://static.wikia.nocookie.net/blue-archive/images/a/a0/Gacha_Banner_69.png/revision/latest/scale-to-width-down/1000?cb=20221108103214" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/a0/Gacha_Banner_69.png/revision/latest/scale-to-width-down/1000?cb=20221108103214" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="真纪"></h4><h4 id="日鞠"><a href="#日鞠" class="headerlink" title="日鞠"></a>日鞠<img src="https://static.wikia.nocookie.net/blue-archive/images/2/29/Gacha_Banner_70.png/revision/latest/scale-to-width-down/1000?cb=20221115162518" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/29/Gacha_Banner_70.png/revision/latest/scale-to-width-down/1000?cb=20221115162518" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日鞠"></h4><h4 id="艾米"><a href="#艾米" class="headerlink" title="艾米"></a>艾米<img src="https://static.wikia.nocookie.net/blue-archive/images/5/51/Gacha_Banner_71.png/revision/latest/scale-to-width-down/1000?cb=20221115162520" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/5/51/Gacha_Banner_71.png/revision/latest/scale-to-width-down/1000?cb=20221115162520" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="艾米"></h4><h4 id="时雨"><a href="#时雨" class="headerlink" title="时雨"></a>时雨<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e9/Gacha_Banner_72.png/revision/latest/scale-to-width-down/1000?cb=20221129151033" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e9/Gacha_Banner_72.png/revision/latest/scale-to-width-down/1000?cb=20221129151033" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="时雨"></h4><h4 id="切里诺温泉-1"><a href="#切里诺温泉-1" class="headerlink" title="切里诺温泉"></a>切里诺温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_29.png/revision/latest/scale-to-width-down/1000?cb=20211129120946" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_29.png/revision/latest/scale-to-width-down/1000?cb=20211129120946" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="切里诺温泉"></h4><h4 id="千夏温泉-1"><a href="#千夏温泉-1" class="headerlink" title="千夏温泉"></a>千夏温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/9/97/Gacha_Banner_30.png/revision/latest/scale-to-width-down/1000?cb=20211129120947" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/97/Gacha_Banner_30.png/revision/latest/scale-to-width-down/1000?cb=20211129120947" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="千夏温泉"></h4><h4 id="和香温泉-1"><a href="#和香温泉-1" class="headerlink" title="和香温泉"></a>和香温泉<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b7/Gacha_Banner_31.png/revision/latest/scale-to-width-down/1000?cb=20211214135431" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b7/Gacha_Banner_31.png/revision/latest/scale-to-width-down/1000?cb=20211214135431" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="和香温泉"></h4><h4 id="花江圣诞"><a href="#花江圣诞" class="headerlink" title="花江圣诞"></a>花江圣诞<img src="https://static.wikia.nocookie.net/blue-archive/images/a/a2/Gacha_Banner_73.png/revision/latest/scale-to-width-down/1000?cb=20221212101357" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/a2/Gacha_Banner_73.png/revision/latest/scale-to-width-down/1000?cb=20221212101357" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="花江圣诞"></h4><h4 id="芹娜圣诞"><a href="#芹娜圣诞" class="headerlink" title="芹娜圣诞"></a>芹娜圣诞<img src="https://static.wikia.nocookie.net/blue-archive/images/1/1f/Gacha_Banner_74.png/revision/latest/scale-to-width-down/1000?cb=20221212101353" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/1f/Gacha_Banner_74.png/revision/latest/scale-to-width-down/1000?cb=20221212101353" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="芹娜圣诞"></h4><h4 id="晴奈正月"><a href="#晴奈正月" class="headerlink" title="晴奈正月"></a>晴奈正月<img src="https://static.wikia.nocookie.net/blue-archive/images/a/ad/Gacha_Banner_75.png/revision/latest/scale-to-width-down/1000?cb=20221227055605" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/ad/Gacha_Banner_75.png/revision/latest/scale-to-width-down/1000?cb=20221227055605" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="晴奈正月"></h4><h4 id="枫香正月"><a href="#枫香正月" class="headerlink" title="枫香正月"></a>枫香正月<img src="https://static.wikia.nocookie.net/blue-archive/images/8/89/Gacha_Banner_76.png/revision/latest/scale-to-width-down/1000?cb=20221227055606" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/89/Gacha_Banner_76.png/revision/latest/scale-to-width-down/1000?cb=20221227055606" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="枫香正月"></h4><h4 id="美弥"><a href="#美弥" class="headerlink" title="美弥"></a>美弥<img src="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_77.png/revision/latest/scale-to-width-down/1000?cb=20230110134646" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_77.png/revision/latest/scale-to-width-down/1000?cb=20230110134646" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="美弥"></h4><h4 id="濑名-1"><a href="#濑名-1" class="headerlink" title="濑名"></a>濑名<img src="https://static.wikia.nocookie.net/blue-archive/images/a/ac/Gacha_Banner_35.png/revision/latest/scale-to-width-down/1000?cb=20220628090813" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/ac/Gacha_Banner_35.png/revision/latest/scale-to-width-down/1000?cb=20220628090813" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="濑名"></h4><h4 id="千寻-1"><a href="#千寻-1" class="headerlink" title="千寻"></a>千寻<img src="https://static.wikia.nocookie.net/blue-archive/images/6/60/Gacha_Banner_36.png/revision/latest/scale-to-width-down/1000?cb=20220628090852" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/60/Gacha_Banner_36.png/revision/latest/scale-to-width-down/1000?cb=20220628090852" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="千寻"></h4><h4 id="未花"><a href="#未花" class="headerlink" title="未花"></a>未花<img src="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_78.png/revision/latest/scale-to-width-down/1000?cb=20230123051737" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_78.png/revision/latest/scale-to-width-down/1000?cb=20230123051737" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="未花"></h4><h4 id="惠"><a href="#惠" class="headerlink" title="惠"></a>惠<img src="https://static.wikia.nocookie.net/blue-archive/images/6/63/Gacha_Banner_79.png/revision/latest/scale-to-width-down/1000?cb=20230130112100" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/63/Gacha_Banner_79.png/revision/latest/scale-to-width-down/1000?cb=20230130112100" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="惠"></h4><h4 id="叶渚"><a href="#叶渚" class="headerlink" title="叶渚"></a>叶渚<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d6/Gacha_Banner_80.png/revision/latest/scale-to-width-down/1000?cb=20230130112110" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d6/Gacha_Banner_80.png/revision/latest/scale-to-width-down/1000?cb=20230130112110" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="叶渚"></h4><h4 id="樱子"><a href="#樱子" class="headerlink" title="樱子"></a>樱子<img src="https://static.wikia.nocookie.net/blue-archive/images/6/6d/Gacha_Banner_81.png/revision/latest/scale-to-width-down/1000?cb=20230209051220" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/6d/Gacha_Banner_81.png/revision/latest/scale-to-width-down/1000?cb=20230209051220" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="樱子"></h4><h4 id="优-1"><a href="#优-1" class="headerlink" title="优"></a>优<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d4/Gacha_Banner_38.png/revision/latest/scale-to-width-down/1000?cb=20220222124718" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d4/Gacha_Banner_38.png/revision/latest/scale-to-width-down/1000?cb=20220222124718" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="优"></h4><h4 id="日向-1"><a href="#日向-1" class="headerlink" title="日向"></a>日向<img src="https://static.wikia.nocookie.net/blue-archive/images/e/ea/Gacha_Banner_39.png/revision/latest/scale-to-width-down/1000?cb=20220222124720" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/ea/Gacha_Banner_39.png/revision/latest/scale-to-width-down/1000?cb=20220222124720" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="日向"></h4><h4 id="渚"><a href="#渚" class="headerlink" title="渚"></a>渚<img src="https://static.wikia.nocookie.net/blue-archive/images/0/08/Gacha_Banner_82.png/revision/latest/scale-to-width-down/1000?cb=20230221122903" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/08/Gacha_Banner_82.png/revision/latest/scale-to-width-down/1000?cb=20230221122903" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="渚"></h4><h4 id="时"><a href="#时" class="headerlink" title="时"></a>时<img src="https://static.wikia.nocookie.net/blue-archive/images/4/46/Gacha_Banner_83.png/revision/latest/scale-to-width-down/1000?cb=20230221122904" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/46/Gacha_Banner_83.png/revision/latest/scale-to-width-down/1000?cb=20230221122904" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="时"></h4><h4 id="小雪"><a href="#小雪" class="headerlink" title="小雪"></a>小雪<img src="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_84.png/revision/latest/scale-to-width-down/1000?cb=20230307120622" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_84.png/revision/latest/scale-to-width-down/1000?cb=20230307120622" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="小雪"></h4><h4 id="白子"><a href="#白子" class="headerlink" title="白子"></a>白子<img src="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_85.png/revision/latest/scale-to-width-down/1000?cb=20230307120646" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/76/Gacha_Banner_85.png/revision/latest/scale-to-width-down/1000?cb=20230307120646" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="白子"></h4><h4 id="佳代子正月"><a href="#佳代子正月" class="headerlink" title="佳代子正月"></a>佳代子正月<img src="https://static.wikia.nocookie.net/blue-archive/images/0/0c/Gacha_Banner_86.png/revision/latest/scale-to-width-down/1000?cb=20230321143853" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/0c/Gacha_Banner_86.png/revision/latest/scale-to-width-down/1000?cb=20230321143853" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="佳代子正月"></h4><h4 id="遥香正月"><a href="#遥香正月" class="headerlink" title="遥香正月"></a>遥香正月<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d0/Gacha_Banner_87.png/revision/latest/scale-to-width-down/1000?cb=20230321143901" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d0/Gacha_Banner_87.png/revision/latest/scale-to-width-down/1000?cb=20230321143901" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="遥香正月"></h4><h4 id="爱露正月-1"><a href="#爱露正月-1" class="headerlink" title="爱露正月"></a>爱露正月<img src="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_32A.png/revision/latest?cb=20220421151621" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/8d/Gacha_Banner_32A.png/revision/latest?cb=20220421151621" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱露正月"></h4><h4 id="睦月正月-1"><a href="#睦月正月-1" class="headerlink" title="睦月正月"></a>睦月正月<img src="https://static.wikia.nocookie.net/blue-archive/images/1/17/Gacha_Banner_32B.png/revision/latest?cb=20220421151623" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/1/17/Gacha_Banner_32B.png/revision/latest?cb=20220421151623" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="睦月正月"></h4><h4 id="芹香正月-1"><a href="#芹香正月-1" class="headerlink" title="芹香正月"></a>芹香正月<img src="https://static.wikia.nocookie.net/blue-archive/images/5/56/Gacha_Banner_33.png/revision/latest/scale-to-width-down/1000?cb=20220111160429" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/5/56/Gacha_Banner_33.png/revision/latest/scale-to-width-down/1000?cb=20220111160429" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="芹香正月"></h4><h4 id="泉奈-x2F-静子-2"><a href="#泉奈-x2F-静子-2" class="headerlink" title="泉奈&#x2F;静子"></a>泉奈&#x2F;静子<img src="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/23/Gacha_Banner_03.png/revision/latest/scale-to-width-down/1000?cb=20210222064320" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="泉奈/静子"></h4><h4 id="三森-1"><a href="#三森-1" class="headerlink" title="三森"></a>三森<img src="https://static.wikia.nocookie.net/blue-archive/images/a/aa/Gacha_Banner_37.png/revision/latest/scale-to-width-down/1000?cb=20220208142340" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/aa/Gacha_Banner_37.png/revision/latest/scale-to-width-down/1000?cb=20220208142340" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="三森"></h4><h4 id="果穗"><a href="#果穗" class="headerlink" title="果穗"></a>果穗<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c9/Gacha_Banner_88.png/revision/latest/scale-to-width-down/1000?cb=20230411092612" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c9/Gacha_Banner_88.png/revision/latest/scale-to-width-down/1000?cb=20230411092612" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="果穗"></h4><h4 id="伊吕波-1"><a href="#伊吕波-1" class="headerlink" title="伊吕波"></a>伊吕波<img src="https://static.wikia.nocookie.net/blue-archive/images/4/43/Gacha_Banner_46.png/revision/latest/scale-to-width-down/1000?cb=20220426133256" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/43/Gacha_Banner_46.png/revision/latest/scale-to-width-down/1000?cb=20220426133256" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="伊吕波"></h4><h4 id="枫-1"><a href="#枫-1" class="headerlink" title="枫"></a>枫<img src="https://static.wikia.nocookie.net/blue-archive/images/f/f3/Gacha_Banner_47.png/revision/latest/scale-to-width-down/1000?cb=20220426133259" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/f/f3/Gacha_Banner_47.png/revision/latest/scale-to-width-down/1000?cb=20220426133259" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="枫"></h4><h4 id="月咏-1"><a href="#月咏-1" class="headerlink" title="月咏"></a>月咏<img src="https://static.wikia.nocookie.net/blue-archive/images/6/69/Gacha_Banner_48.png/revision/latest/scale-to-width-down/1000?cb=20220510131038" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/69/Gacha_Banner_48.png/revision/latest/scale-to-width-down/1000?cb=20220510131038" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="月咏"></h4><h4 id="切里诺-2"><a href="#切里诺-2" class="headerlink" title="切里诺"></a>切里诺<img src="https://static.wikia.nocookie.net/blue-archive/images/b/b8/Gacha_Banner_09.png/revision/latest/scale-to-width-down/1000?cb=20210429060654" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/b/b8/Gacha_Banner_09.png/revision/latest/scale-to-width-down/1000?cb=20210429060654" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="切里诺"></h4><h4 id="玛利娜-1"><a href="#玛利娜-1" class="headerlink" title="玛利娜"></a>玛利娜<img src="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_40.png/revision/latest/scale-to-width-down/1000?cb=20220308132303" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/04/Gacha_Banner_40.png/revision/latest/scale-to-width-down/1000?cb=20220308132303" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="玛利娜"></h4><h4 id="爱丽丝女仆"><a href="#爱丽丝女仆" class="headerlink" title="爱丽丝女仆"></a>爱丽丝女仆<img src="https://static.wikia.nocookie.net/blue-archive/images/d/df/Gacha_Banner_89.png/revision/latest/scale-to-width-down/1000?cb=20230425123448" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/df/Gacha_Banner_89.png/revision/latest/scale-to-width-down/1000?cb=20230425123448" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="爱丽丝女仆"></h4><h4 id="兔女郎时"><a href="#兔女郎时" class="headerlink" title="兔女郎时"></a>兔女郎时<img src="https://static.wikia.nocookie.net/blue-archive/images/8/8b/Gacha_Banner_90.png/revision/latest/scale-to-width-down/1000?cb=20230425123530" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/8b/Gacha_Banner_90.png/revision/latest/scale-to-width-down/1000?cb=20230425123530" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="兔女郎时"></h4><h4 id="玲纱"><a href="#玲纱" class="headerlink" title="玲纱"></a>玲纱<img src="https://static.wikia.nocookie.net/blue-archive/images/6/62/Gacha_Banner_91.png/revision/latest/scale-to-width-down/1000?cb=20230509085420" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/6/62/Gacha_Banner_91.png/revision/latest/scale-to-width-down/1000?cb=20230509085420" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="玲纱"></h4><h4 id="和纱-1"><a href="#和纱-1" class="headerlink" title="和纱"></a>和纱<img src="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_61.png/revision/latest/scale-to-width-down/1000?cb=20220823122528" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/4/45/Gacha_Banner_61.png/revision/latest/scale-to-width-down/1000?cb=20220823122528" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="和纱"></h4><h4 id="夏-x2F-玛丽-2"><a href="#夏-x2F-玛丽-2" class="headerlink" title="夏&#x2F;玛丽"></a>夏&#x2F;玛丽<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cb/Gacha_Banner_26.png/revision/latest/scale-to-width-down/1000?cb=20211026141939" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="/玛丽"></h4><h4 id="水梓-2"><a href="#水梓-2" class="headerlink" title="水梓"></a>水梓<img src="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/de/Gacha_Banner_14.png/revision/latest/scale-to-width-down/1000?cb=20210629061540" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水梓"></h4><h4 id="水真白-2"><a href="#水真白-2" class="headerlink" title="水真白"></a>水真白<img src="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/9d/Gacha_Banner_15.png/revision/latest/scale-to-width-down/1000?cb=20210629061542" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水真白"></h4><h4 id="水日富美-2"><a href="#水日富美-2" class="headerlink" title="水日富美"></a>水日富美<img src="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/a/af/Gacha_Banner_16.png/revision/latest/scale-to-width-down/1000?cb=20210714044146" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日富美"></h4><h4 id="瑠美"><a href="#瑠美" class="headerlink" title="瑠美"></a>瑠美<img src="https://static.wikia.nocookie.net/blue-archive/images/3/34/Gacha_Banner_92.png/revision/latest/scale-to-width-down/1000?cb=20230523101511" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/34/Gacha_Banner_92.png/revision/latest/scale-to-width-down/1000?cb=20230523101511" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="瑠美"></h4><h4 id="弥奈"><a href="#弥奈" class="headerlink" title="弥奈"></a>弥奈<img src="https://static.wikia.nocookie.net/blue-archive/images/0/09/Gacha_Banner_93.png/revision/latest/scale-to-width-down/1000?cb=20230523101521" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/09/Gacha_Banner_93.png/revision/latest/scale-to-width-down/1000?cb=20230523101521" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="弥奈"></h4><h4 id="实里"><a href="#实里" class="headerlink" title="实里"></a>实里<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c4/Gacha_Banner_94.png/revision/latest/scale-to-width-down/1000?cb=20230606062407" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c4/Gacha_Banner_94.png/revision/latest/scale-to-width-down/1000?cb=20230606062407" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="实里"></h4><h4 id="宫子-1"><a href="#宫子-1" class="headerlink" title="宫子"></a>宫子<img src="https://static.wikia.nocookie.net/blue-archive/images/8/87/Gacha_Banner_42.png/revision/latest/scale-to-width-down/1000?cb=20220322114106" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/8/87/Gacha_Banner_42.png/revision/latest/scale-to-width-down/1000?cb=20220322114106" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="宫子"></h4><h4 id="咲-1"><a href="#咲-1" class="headerlink" title="咲"></a>咲<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_43.png/revision/latest/scale-to-width-down/1000?cb=20220322114108" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_43.png/revision/latest/scale-to-width-down/1000?cb=20220322114108" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="咲"></h4><h4 id="美游-1"><a href="#美游-1" class="headerlink" title="美游"></a>美游<img src="https://static.wikia.nocookie.net/blue-archive/images/2/20/Gacha_Banner_44.png/revision/latest/scale-to-width-down/1000?cb=20220405131845" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/20/Gacha_Banner_44.png/revision/latest/scale-to-width-down/1000?cb=20220405131845" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="美游"></h4><h4 id="萌绘-1"><a href="#萌绘-1" class="headerlink" title="萌绘"></a>萌绘<img src="https://static.wikia.nocookie.net/blue-archive/images/3/38/Gacha_Banner_60.png/revision/latest/scale-to-width-down/1000?cb=20220823122526" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/3/38/Gacha_Banner_60.png/revision/latest/scale-to-width-down/1000?cb=20220823122526" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="萌绘"></h4><h4 id="水宫子"><a href="#水宫子" class="headerlink" title="水宫子"></a>水宫子<img src="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_95.png/revision/latest/scale-to-width-down/1000?cb=20230620070117" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/d/d3/Gacha_Banner_95.png/revision/latest/scale-to-width-down/1000?cb=20230620070117" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水宫子"></h4><h4 id="水咲"><a href="#水咲" class="headerlink" title="水咲"></a>水咲<img src="https://static.wikia.nocookie.net/blue-archive/images/2/2a/Gacha_Banner_96.png/revision/latest/scale-to-width-down/1000?cb=20230620070131" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/2/2a/Gacha_Banner_96.png/revision/latest/scale-to-width-down/1000?cb=20230620070131" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水咲"></h4><h4 id="水日奈-2"><a href="#水日奈-2" class="headerlink" title="水日奈"></a>水日奈<img src="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/ce/Gacha_Banner_17.png/revision/latest/scale-to-width-down/1000?cb=20210728161842" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日奈"></h4><h4 id="水伊织-2"><a href="#水伊织-2" class="headerlink" title="水伊织"></a>水伊织<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e8/Gacha_Banner_18.png/revision/latest/scale-to-width-down/1000?cb=20210728161853" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水伊织"></h4><h4 id="骑行白子-2"><a href="#骑行白子-2" class="headerlink" title="骑行白子"></a>骑行白子<img src="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/cc/Gacha_Banner_19.png/revision/latest/scale-to-width-down/1000?cb=20210811052105" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="骑行白子"></h4><h4 id="梓-x2F-花子-2"><a href="#梓-x2F-花子-2" class="headerlink" title="梓&#x2F;花子"></a>梓&#x2F;花子<img src="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/96/Gacha_Banner_11.png/revision/latest/scale-to-width-down/1000?cb=20210526065644" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="梓/花子"></h4><h4 id="水白子"><a href="#水白子" class="headerlink" title="水白子"></a>水白子<img src="https://static.wikia.nocookie.net/blue-archive/images/9/9a/Gacha_Banner_97.png/revision/latest/scale-to-width-down/1000?cb=20230716122131" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/9a/Gacha_Banner_97.png/revision/latest/scale-to-width-down/1000?cb=20230716122131" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水白子"></h4><h4 id="水野宫-1"><a href="#水野宫-1" class="headerlink" title="水野宫"></a>水野宫<img src="https://static.wikia.nocookie.net/blue-archive/images/7/73/Gacha_Banner_52.png/revision/latest/scale-to-width-down/1000?cb=20220617154754" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/73/Gacha_Banner_52.png/revision/latest/scale-to-width-down/1000?cb=20220617154754" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水野宫"></h4><h4 id="水若藻-1"><a href="#水若藻-1" class="headerlink" title="水若藻"></a>水若藻<img src="https://static.wikia.nocookie.net/blue-archive/images/c/c8/Gacha_Banner_53.png/revision/latest/scale-to-width-down/1000?cb=20220617154756" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/c/c8/Gacha_Banner_53.png/revision/latest/scale-to-width-down/1000?cb=20220617154756" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水若藻"></h4><h4 id="水优"><a href="#水优" class="headerlink" title="水优"></a>水优<img src="https://static.wikia.nocookie.net/blue-archive/images/0/08/Gacha_Banner_98.png/revision/latest/scale-to-width-down/1000?cb=20230724071350" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/0/08/Gacha_Banner_98.png/revision/latest/scale-to-width-down/1000?cb=20230724071350" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水优"></h4><h4 id="水日向"><a href="#水日向" class="headerlink" title="水日向"></a>水日向<img src="https://static.wikia.nocookie.net/blue-archive/images/e/e0/Gacha_Banner_99.png/revision/latest/scale-to-width-down/1000?cb=20230724071433" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/e/e0/Gacha_Banner_99.png/revision/latest/scale-to-width-down/1000?cb=20230724071433" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水日向"></h4><p>水ハナコ<img src="https://static.wikia.nocookie.net/blue-archive/images/9/90/Gacha_Banner_100.png/revision/latest/scale-to-width-down/1000?cb=20230723155412" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/9/90/Gacha_Banner_100.png/revision/latest/scale-to-width-down/1000?cb=20230723155412" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="水ハナコ"></p>
+<h4 id="若藻-1"><a href="#若藻-1" class="headerlink" title="若藻"></a>若藻<img src="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_34.png/revision/latest/scale-to-width-down/1000?cb=20220628090746" class="lazyload placeholder" data-srcset="https://static.wikia.nocookie.net/blue-archive/images/7/7c/Gacha_Banner_34.png/revision/latest/scale-to-width-down/1000?cb=20220628090746" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="若藻"></h4>
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88/" class="">
+              碧蓝档案
+            </a>
+          
+            <a href="/tags/Blue-Archive/" class="">
+              Blue Archive
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>znxs</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2023/08/07/碧蓝档案池子/" target="_blank" title="碧蓝档案池子[更]">http://znxs.github.io/2023/08/07/碧蓝档案池子/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://webcnstatic.yostar.net/ba_cn_web/prod/upload/wallpaper/X0_6rTZl.jpeg" class="lazyload placeholder" data-srcset="https://webcnstatic.yostar.net/ba_cn_web/prod/upload/wallpaper/X0_6rTZl.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/08/05/BA%E5%BB%BA%E8%AE%AE%E6%8A%BD%E5%8F%96/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">BA建议抽取</div>
+      </div>
+      <!-- <div class="content">
+        建议这是blue archive抽取建议，经历了盲目抽取首抽之后，决定还是下一个攻略来记录抽取的建议😔
+首先就是未来必
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='https://blog.znxs.vip/znxs/avatar.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>左拿先生</h2>
+        
+        
+          <p>无限进步</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">znxs</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:znxs159357@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/znxs"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=669583491"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BA%E5%8E%86%E5%B9%B4%E6%B1%A0%E5%AD%90%E2%9C%A8%E2%9C%A8"><span class="toc-text">BA历年池子✨✨</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E5%AD%90-x2F-%E6%98%9F%E9%87%8E"><span class="toc-text">白子&#x2F;星野</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E5%B1%B1%E7%9C%9F%E7%99%BD"><span class="toc-text">静山真白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%89%E5%A5%88-x2F-%E9%9D%99%E5%AD%90"><span class="toc-text">泉奈&#x2F;静子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%B4%E5%A5%88"><span class="toc-text">晴奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E9%9C%B2"><span class="toc-text">爱露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E4%B8%BD%E4%B8%9D"><span class="toc-text">爱丽丝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BF-x2F-%E6%A1%83%E4%BA%95"><span class="toc-text">绿&#x2F;桃井</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B1%E5%87%9B"><span class="toc-text">花凛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E9%87%8C%E8%AF%BA"><span class="toc-text">切里诺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%9A%E5%AD%90"><span class="toc-text">柚子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%93-x2F-%E8%8A%B1%E5%AD%90"><span class="toc-text">梓&#x2F;花子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E6%98%A5"><span class="toc-text">小春</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%AF%8C%E7%BE%8E"><span class="toc-text">日富美</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%A2%93"><span class="toc-text">水梓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E7%9C%9F%E7%99%BD"><span class="toc-text">水真白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%AF%8C%E7%BE%8E"><span class="toc-text">水日富美</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%A5%88"><span class="toc-text">水日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E4%BC%8A%E7%BB%87"><span class="toc-text">水伊织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%91%E8%A1%8C%E7%99%BD%E5%AD%90"><span class="toc-text">骑行白子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BC%E7%9E%AC-x2F-%E6%A1%90%E4%B9%83"><span class="toc-text">幼瞬&#x2F;桐乃</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B1%E5%87%8C%E7%A7%81%E6%9C%8D"><span class="toc-text">纱凌私服</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%8D"><span class="toc-text">响</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E5%B0%BC%E7%A6%84"><span class="toc-text">兔女郎尼禄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E8%8A%B1%E5%87%9B"><span class="toc-text">兔女郎花凛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E6%98%8E%E6%97%A5%E5%A5%88"><span class="toc-text">兔女郎明日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8F-x2F-%E7%8E%9B%E4%B8%BD"><span class="toc-text">夏&#x2F;玛丽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5"><span class="toc-text">初音未来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%9A%E5%AD%90"><span class="toc-text">亚子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E9%87%8C%E8%AF%BA%E6%B8%A9%E6%B3%89"><span class="toc-text">切里诺温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%83%E5%A4%8F%E6%B8%A9%E6%B3%89"><span class="toc-text">千夏温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C%E9%A6%99%E6%B8%A9%E6%B3%89"><span class="toc-text">和香温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E9%9C%B2%E6%AD%A3%E6%9C%88"><span class="toc-text">爱露正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9D%A6%E6%9C%88%E6%AD%A3%E6%9C%88"><span class="toc-text">睦月正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B9%E9%A6%99%E6%AD%A3%E6%9C%88"><span class="toc-text">芹香正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8B%A5%E8%97%BB"><span class="toc-text">若藻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BF%91%E5%90%8D"><span class="toc-text">濑名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%83%E5%AF%BB"><span class="toc-text">千寻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%A3%AE"><span class="toc-text">三森</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%89%E5%A5%88-x2F-%E9%9D%99%E5%AD%90-1"><span class="toc-text">泉奈&#x2F;静子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E6%98%A5-1"><span class="toc-text">小春</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%B4%E5%A5%88-1"><span class="toc-text">晴奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98"><span class="toc-text">优</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%90%91"><span class="toc-text">日向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%9B%E5%88%A9%E5%A8%9C"><span class="toc-text">玛利娜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E9%87%8C%E8%AF%BA-1"><span class="toc-text">切里诺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%8A%E7%BB%87"><span class="toc-text">伊织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BF-x2F-%E6%A1%83%E4%BA%95-1"><span class="toc-text">绿&#x2F;桃井</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%AB%E5%AD%90"><span class="toc-text">宫子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%B2"><span class="toc-text">咲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E6%B8%B8"><span class="toc-text">美游</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%B9%A4%E5%9F%8E"><span class="toc-text">鹤城</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%A2%93-1"><span class="toc-text">水梓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E7%9C%9F%E7%99%BD-1"><span class="toc-text">水真白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%AF%8C%E7%BE%8E-1"><span class="toc-text">水日富美</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%8A%E5%90%95%E6%B3%A2"><span class="toc-text">伊吕波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%AB"><span class="toc-text">枫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%88%E5%92%8F"><span class="toc-text">月咏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%9A%E5%AD%90-1"><span class="toc-text">柚子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E5%92%B2"><span class="toc-text">美咲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%92%8C"><span class="toc-text">日和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%93-x2F-%E8%8A%B1%E5%AD%90-1"><span class="toc-text">梓&#x2F;花子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E9%87%8E%E5%AE%AB"><span class="toc-text">水野宫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E8%8B%A5%E8%97%BB"><span class="toc-text">水若藻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%9F%E9%87%8E"><span class="toc-text">星野</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%A5%88"><span class="toc-text">日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%98%9F%E9%87%8E"><span class="toc-text">水星野</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%B3%89%E5%A5%88"><span class="toc-text">水泉奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%8D%83%E5%AF%BA"><span class="toc-text">水千寺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%91%E8%A1%8C%E7%99%BD%E5%AD%90-1"><span class="toc-text">骑行白子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E4%B8%BD%E4%B8%9D-1"><span class="toc-text">爱丽丝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B1%E7%BB%87"><span class="toc-text">纱织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E9%9C%B2-1"><span class="toc-text">爱露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%90%8C%E7%BB%98"><span class="toc-text">萌绘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C%E7%BA%B1"><span class="toc-text">和纱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%A5%88-1"><span class="toc-text">水日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E4%BC%8A%E7%BB%87-1"><span class="toc-text">水伊织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8F-x2F-%E7%8E%9B%E4%B8%BD-1"><span class="toc-text">夏&#x2F;玛丽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9E%AC"><span class="toc-text">瞬</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%83%E5%A5%88"><span class="toc-text">心奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BC%E7%9E%AC-x2F-%E6%A1%90%E4%B9%83-1"><span class="toc-text">幼瞬&#x2F;桐乃</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B1%E5%87%8C%E7%A7%81%E6%9C%8D-1"><span class="toc-text">纱凌私服</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%8C%E5%8E%9F%E5%BA%94%E6%8F%B4%E5%9B%A2"><span class="toc-text">歌原应援团</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%BA%E4%BA%9A"><span class="toc-text">诺亚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E8%8C%9C"><span class="toc-text">兔女郎茜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E5%B0%BC%E7%A6%84-1"><span class="toc-text">兔女郎尼禄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E8%8A%B1%E5%87%9B-1"><span class="toc-text">兔女郎花凛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E6%98%8E%E6%97%A5%E5%A5%88-1"><span class="toc-text">兔女郎明日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%8D-1"><span class="toc-text">响</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%9A%E5%AD%90-1"><span class="toc-text">亚子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%9B%E4%B8%BD%E4%BD%93%E6%93%8D%E6%9C%8D"><span class="toc-text">玛丽体操服</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E9%A6%99%E4%BD%93%E6%93%8D%E6%9C%8D"><span class="toc-text">优香体操服</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E7%BA%AA"><span class="toc-text">真纪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E9%9E%A0"><span class="toc-text">日鞠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%89%BE%E7%B1%B3"><span class="toc-text">艾米</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%9B%A8"><span class="toc-text">时雨</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E9%87%8C%E8%AF%BA%E6%B8%A9%E6%B3%89-1"><span class="toc-text">切里诺温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%83%E5%A4%8F%E6%B8%A9%E6%B3%89-1"><span class="toc-text">千夏温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C%E9%A6%99%E6%B8%A9%E6%B3%89-1"><span class="toc-text">和香温泉</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B1%E6%B1%9F%E5%9C%A3%E8%AF%9E"><span class="toc-text">花江圣诞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B9%E5%A8%9C%E5%9C%A3%E8%AF%9E"><span class="toc-text">芹娜圣诞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%B4%E5%A5%88%E6%AD%A3%E6%9C%88"><span class="toc-text">晴奈正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%AB%E9%A6%99%E6%AD%A3%E6%9C%88"><span class="toc-text">枫香正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E5%BC%A5"><span class="toc-text">美弥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BF%91%E5%90%8D-1"><span class="toc-text">濑名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%83%E5%AF%BB-1"><span class="toc-text">千寻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AA%E8%8A%B1"><span class="toc-text">未花</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%A0"><span class="toc-text">惠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B6%E6%B8%9A"><span class="toc-text">叶渚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%B1%E5%AD%90"><span class="toc-text">樱子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98-1"><span class="toc-text">优</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E5%90%91-1"><span class="toc-text">日向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%9A"><span class="toc-text">渚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6"><span class="toc-text">时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E9%9B%AA"><span class="toc-text">小雪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E5%AD%90"><span class="toc-text">白子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%B3%E4%BB%A3%E5%AD%90%E6%AD%A3%E6%9C%88"><span class="toc-text">佳代子正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%A5%E9%A6%99%E6%AD%A3%E6%9C%88"><span class="toc-text">遥香正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E9%9C%B2%E6%AD%A3%E6%9C%88-1"><span class="toc-text">爱露正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9D%A6%E6%9C%88%E6%AD%A3%E6%9C%88-1"><span class="toc-text">睦月正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%B9%E9%A6%99%E6%AD%A3%E6%9C%88-1"><span class="toc-text">芹香正月</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%89%E5%A5%88-x2F-%E9%9D%99%E5%AD%90-2"><span class="toc-text">泉奈&#x2F;静子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%A3%AE-1"><span class="toc-text">三森</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%9C%E7%A9%97"><span class="toc-text">果穗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%8A%E5%90%95%E6%B3%A2-1"><span class="toc-text">伊吕波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%AB-1"><span class="toc-text">枫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%88%E5%92%8F-1"><span class="toc-text">月咏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E9%87%8C%E8%AF%BA-2"><span class="toc-text">切里诺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%9B%E5%88%A9%E5%A8%9C-1"><span class="toc-text">玛利娜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B1%E4%B8%BD%E4%B8%9D%E5%A5%B3%E4%BB%86"><span class="toc-text">爱丽丝女仆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%94%E5%A5%B3%E9%83%8E%E6%97%B6"><span class="toc-text">兔女郎时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B2%E7%BA%B1"><span class="toc-text">玲纱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C%E7%BA%B1-1"><span class="toc-text">和纱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8F-x2F-%E7%8E%9B%E4%B8%BD-2"><span class="toc-text">夏&#x2F;玛丽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%A2%93-2"><span class="toc-text">水梓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E7%9C%9F%E7%99%BD-2"><span class="toc-text">水真白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%AF%8C%E7%BE%8E-2"><span class="toc-text">水日富美</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%91%A0%E7%BE%8E"><span class="toc-text">瑠美</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%A5%E5%A5%88"><span class="toc-text">弥奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%87%8C"><span class="toc-text">实里</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%AB%E5%AD%90-1"><span class="toc-text">宫子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%B2-1"><span class="toc-text">咲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E6%B8%B8-1"><span class="toc-text">美游</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%90%8C%E7%BB%98-1"><span class="toc-text">萌绘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%AE%AB%E5%AD%90"><span class="toc-text">水宫子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%92%B2"><span class="toc-text">水咲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%A5%88-2"><span class="toc-text">水日奈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E4%BC%8A%E7%BB%87-2"><span class="toc-text">水伊织</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%91%E8%A1%8C%E7%99%BD%E5%AD%90-2"><span class="toc-text">骑行白子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%93-x2F-%E8%8A%B1%E5%AD%90-2"><span class="toc-text">梓&#x2F;花子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E7%99%BD%E5%AD%90"><span class="toc-text">水白子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E9%87%8E%E5%AE%AB-1"><span class="toc-text">水野宫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E8%8B%A5%E8%97%BB-1"><span class="toc-text">水若藻</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E4%BC%98"><span class="toc-text">水优</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E6%97%A5%E5%90%91"><span class="toc-text">水日向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8B%A5%E8%97%BB-1"><span class="toc-text">若藻</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/07/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88%E6%B1%A0%E5%AD%90/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://blog.znxs.vip/znxs/adf8b9a2cc61b686f98a8d6a0d015abf211082a5.jpg@1256w_884h_!web-article-pic.webp" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/adf8b9a2cc61b686f98a8d6a0d015abf211082a5.jpg@1256w_884h_!web-article-pic.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-07</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/07/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88%E6%B1%A0%E5%AD%90/">碧蓝档案池子[更]</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/05/BA%E5%BB%BA%E8%AE%AE%E6%8A%BD%E5%8F%96/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://webcnstatic.yostar.net/ba_cn_web/prod/upload/wallpaper/X0_6rTZl.jpeg" class="lazyload placeholder" data-srcset="https://webcnstatic.yostar.net/ba_cn_web/prod/upload/wallpaper/X0_6rTZl.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-05</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/05/BA%E5%BB%BA%E8%AE%AE%E6%8A%BD%E5%8F%96/">BA建议抽取</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/07/21/%E4%B8%8A%E6%B5%B7bw%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://img.tukuppt.com/png_preview/00/02/31/sn7R13Trcj.jpg!/fw/780" class="lazyload placeholder" data-srcset="https://img.tukuppt.com/png_preview/00/02/31/sn7R13Trcj.jpg!/fw/780" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-21</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/21/%E4%B8%8A%E6%B5%B7bw%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">上海bw旅游攻略</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/07/17/js%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://blog.znxs.vip/znxs/OIP-C.jpg" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/OIP-C.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-17</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/17/js%E9%9D%A2%E8%AF%95%E9%A2%98/">js面试题</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/07/17/Es6/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-17</span>
+                
+              </div>
+              <a class="post-title" href="/2023/07/17/Es6/">Es6</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || 'https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script>
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2023 - 2023 <a target="_blank" rel="noopener" href="https://github.com/znxs">znxs</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
