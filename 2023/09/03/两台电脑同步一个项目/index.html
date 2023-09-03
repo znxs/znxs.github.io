@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>search | znxs</title>
+  <title>两台电脑同步一个项目 | znxs</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -378,17 +378,36 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        search
+        两台电脑同步一个项目
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2023-09-03 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" class="post-detail-header_category">
+              实用技术
+            </a>
+          
+        </span>
+      
+
+      
     
   </div>
   
@@ -406,9 +425,54 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h2 id="同步开发"><a href="#同步开发" class="headerlink" title="同步开发"></a>同步开发</h2><blockquote>
+<p>关于两台电脑同步同一个项目相关简介，因为我有这个需求，所以就直接干了</p>
+</blockquote>
+<h5 id="首先就是要有两个gitee账号"><a href="#首先就是要有两个gitee账号" class="headerlink" title="首先就是要有两个gitee账号"></a>首先就是要有两个gitee账号</h5><p>这个自己创建吧</p>
+<h3 id="第一台电脑"><a href="#第一台电脑" class="headerlink" title="第一台电脑"></a>第一台电脑</h3><h5 id="然后就是一个账号创建项目"><a href="#然后就是一个账号创建项目" class="headerlink" title="然后就是一个账号创建项目"></a>然后就是一个账号创建项目</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git 创建仓库流程</span></span><br><span class="line"><span class="built_in">cd</span> ./project</span><br><span class="line"><span class="comment"># git 初始化</span></span><br><span class="line">git init </span><br><span class="line"><span class="comment"># 创建初始文件 readme.md (test)</span></span><br><span class="line"><span class="built_in">touch</span> README.md</span><br><span class="line"><span class="comment"># 添加文件到暂存区</span></span><br><span class="line">git add README.md</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"><a href="#如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作" class="headerlink" title="如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"></a>如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错"><a href="#或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错" class="headerlink" title="或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)"></a>或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /project</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 直接将整个项目推送到远程仓库</span></span><br><span class="line">gut push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="第二台电脑"><a href="#第二台电脑" class="headerlink" title="第二台电脑"></a>第二台电脑</h3><blockquote>
+<p>注意：执行之前确保是第二个账号并且在第一个账号的仓库成员中</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目文件夹内 初始化git</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 查看远程分支</span></span><br><span class="line">git remote -v </span><br><span class="line"><span class="comment"># 克隆仓库下来 (这是在配置好邮箱密码前提下)</span></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br><span class="line"><span class="comment"># 完成之后项目里面就有一个文件夹 是该项目的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /项目文件夹</span><br><span class="line"><span class="comment"># 可以修改文件 添加文件操作</span></span><br><span class="line"><span class="built_in">touch</span> a.txt</span><br><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>到此 两个电脑就全部可以修改同一个项目了，但是还没结束，因为修改之后怎么同步到本地项目呢</p>
+</blockquote>
+<h3 id="同步到本地项目"><a href="#同步到本地项目" class="headerlink" title="同步到本地项目"></a>同步到本地项目</h3><blockquote>
+<p>有两种方式</p>
+</blockquote>
+<h5 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="comment"># 从远程仓库获取最新版本到本地</span></span><br><span class="line">git fetch origin master:newVersion</span><br><span class="line"><span class="comment"># 比较本地仓库和远程仓库的不同</span></span><br><span class="line">git diff newVersion</span><br><span class="line"><span class="comment"># 合并newVersion分支到master分支</span></span><br><span class="line">git merge newVersion</span><br></pre></td></tr></table></figure>
+
+<p>如果newVersion不再使用，可以删掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d newVersion</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h5><p>直接pull 不过有个弊端 不知道更新了什么</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/git/" class="">
+              git
+            </a>
+          
+            <a href="/tags/%E5%90%8C%E6%AD%A5%E9%A1%B9%E7%9B%AE/" class="">
+              同步项目
+            </a>
+          
+        </div>
         
       </div>
       
@@ -419,7 +483,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/search/index.html" target="_blank" title="search">http://znxs.github.io/search/index.html</a>
+    <a href="/2023/09/03/两台电脑同步一个项目/" target="_blank" title="两台电脑同步一个项目">http://znxs.github.io/2023/09/03/两台电脑同步一个项目/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -438,6 +502,24 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://blog.znxs.vip/znxs/1059288.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/1059288.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/08/29/%E5%81%87%E6%9C%9F%E6%80%BB%E7%BB%93/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">假期总结</div>
+      </div>
+      <!-- <div class="content">
+        慎独 🤷‍♂️
+首先一点，就是尽量慎独，独处很是可怕，不是说不推荐独处，一个有理想，有追求的人独处的时候，可以感到事情
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -643,83 +725,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/Game/" href="/categories/Game/"
-              id="categoriesGame"
-              ><div class='name'>Game</div><div class='badge'>(2)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E5%88%86%E7%B1%BB1/" href="/categories/%E5%88%86%E7%B1%BB1/"
-              id="categoriesE58886E7B1BB1"
-              ><div class='name'>分类1</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"
-              id="categoriesE5AE9EE794A8E68A80E69CAF"
-              ><div class='name'>实用技术</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%80%BB%E7%BB%93/" href="/categories/%E6%80%BB%E7%BB%93/"
-              id="categoriesE680BBE7BB93"
-              ><div class='name'>总结</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%97%85%E6%B8%B8/" href="/categories/%E6%97%85%E6%B8%B8/"
-              id="categoriesE69785E6B8B8"
-              ><div class='name'>旅游</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-              id="categoriesE6B58BE8AF95"
-              ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E7%A8%8B%E5%BA%8F/" href="/categories/%E7%A8%8B%E5%BA%8F/"
-              id="categoriesE7A88BE5BA8F"
-              ><div class='name'>程序</div><div class='badge'>(5)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%A7%84%E5%88%92/" href="/categories/%E8%A7%84%E5%88%92/"
-              id="categoriesE8A784E58892"
-              ><div class='name'>规划</div><div class='badge'>(1)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%BC%80%E5%8F%91"><span class="toc-text">同步开发</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%B0%B1%E6%98%AF%E8%A6%81%E6%9C%89%E4%B8%A4%E4%B8%AAgitee%E8%B4%A6%E5%8F%B7"><span class="toc-text">首先就是要有两个gitee账号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91"><span class="toc-text">第一台电脑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%84%B6%E5%90%8E%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-text">然后就是一个账号创建项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%89%E5%88%AB%E7%9A%84%E9%A1%B9%E7%9B%AE-%E5%B7%B2%E7%BB%8F%E5%BC%80%E5%8F%91%E5%A5%BD%E4%BA%86%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%A4%8D%E5%88%B6%E5%88%B0%E5%88%9A%E5%88%9A%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E9%87%8D%E5%A4%8D%E6%B7%BB%E5%8A%A0%E6%8E%A8%E9%80%81%E6%93%8D%E4%BD%9C"><span class="toc-text">如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E6%B7%BB%E5%8A%A0%E8%AF%A5%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%86%85-%E8%BF%98%E6%B2%A1%E8%AF%95%E8%BF%87%E8%BF%99%E6%A0%B7%EF%BC%8C%E4%B8%8D%E7%9F%A5%E9%81%93%E4%BC%9A%E4%B8%8D%E4%BC%9A%E6%8A%A5%E9%94%99"><span class="toc-text">或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%8F%B0%E7%94%B5%E8%84%91"><span class="toc-text">第二台电脑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%88%B0%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE"><span class="toc-text">同步到本地项目</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-text">方式二</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/Blue-Archive/" style="font-size: 19px; color: #777">Blue Archive</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/%E4%B8%8A%E6%B5%B7/" style="font-size: 14px; color: #999">上海</a> <a href="/tags/%E5%90%8C%E6%AD%A5%E9%A1%B9%E7%9B%AE/" style="font-size: 14px; color: #999">同步项目</a> <a href="/tags/%E6%9A%91%E5%81%87%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">暑假学习</a> <a href="/tags/%E6%9A%91%E6%9C%9F%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">暑期学习</a> <a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 14px; color: #999">标签1</a> <a href="/tags/%E6%A0%87%E7%AD%BE2/" style="font-size: 14px; color: #999">标签2</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 19px; color: #777">测试</a> <a href="/tags/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88/" style="font-size: 19px; color: #777">碧蓝档案</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -845,129 +873,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>14 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2023/06/13'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sun Sep 03 2023 12:11:36 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-09-03 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-09-03 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>

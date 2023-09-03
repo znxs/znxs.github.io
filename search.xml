@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>两台电脑同步一个项目</title>
+      <link href="/2023/09/03/%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2023/09/03/%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="同步开发"><a href="#同步开发" class="headerlink" title="同步开发"></a>同步开发</h2><blockquote><p>关于两台电脑同步同一个项目相关简介，因为我有这个需求，所以就直接干了</p></blockquote><h5 id="首先就是要有两个gitee账号"><a href="#首先就是要有两个gitee账号" class="headerlink" title="首先就是要有两个gitee账号"></a>首先就是要有两个gitee账号</h5><p>这个自己创建吧</p><h3 id="第一台电脑"><a href="#第一台电脑" class="headerlink" title="第一台电脑"></a>第一台电脑</h3><h5 id="然后就是一个账号创建项目"><a href="#然后就是一个账号创建项目" class="headerlink" title="然后就是一个账号创建项目"></a>然后就是一个账号创建项目</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># git 创建仓库流程</span></span><br><span class="line"><span class="built_in">cd</span> ./project</span><br><span class="line"><span class="comment"># git 初始化</span></span><br><span class="line">git init </span><br><span class="line"><span class="comment"># 创建初始文件 readme.md (test)</span></span><br><span class="line"><span class="built_in">touch</span> README.md</span><br><span class="line"><span class="comment"># 添加文件到暂存区</span></span><br><span class="line">git add README.md</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure><h5 id="如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"><a href="#如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作" class="headerlink" title="如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"></a>如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure><h5 id="或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错"><a href="#或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错" class="headerlink" title="或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)"></a>或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /project</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 直接将整个项目推送到远程仓库</span></span><br><span class="line">gut push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure><h3 id="第二台电脑"><a href="#第二台电脑" class="headerlink" title="第二台电脑"></a>第二台电脑</h3><blockquote><p>注意：执行之前确保是第二个账号并且在第一个账号的仓库成员中</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目文件夹内 初始化git</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 查看远程分支</span></span><br><span class="line">git remote -v </span><br><span class="line"><span class="comment"># 克隆仓库下来 (这是在配置好邮箱密码前提下)</span></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br><span class="line"><span class="comment"># 完成之后项目里面就有一个文件夹 是该项目的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /项目文件夹</span><br><span class="line"><span class="comment"># 可以修改文件 添加文件操作</span></span><br><span class="line"><span class="built_in">touch</span> a.txt</span><br><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure><blockquote><p>到此 两个电脑就全部可以修改同一个项目了，但是还没结束，因为修改之后怎么同步到本地项目呢</p></blockquote><h3 id="同步到本地项目"><a href="#同步到本地项目" class="headerlink" title="同步到本地项目"></a>同步到本地项目</h3><blockquote><p>有两种方式</p></blockquote><h5 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="comment"># 从远程仓库获取最新版本到本地</span></span><br><span class="line">git fetch origin master:newVersion</span><br><span class="line"><span class="comment"># 比较本地仓库和远程仓库的不同</span></span><br><span class="line">git diff newVersion</span><br><span class="line"><span class="comment"># 合并newVersion分支到master分支</span></span><br><span class="line">git merge newVersion</span><br></pre></td></tr></table></figure><p>如果newVersion不再使用，可以删掉</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d newVersion</span><br></pre></td></tr></table></figure><h5 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h5><p>直接pull 不过有个弊端 不知道更新了什么</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 同步项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>假期总结</title>
+      <link href="/2023/08/29/%E5%81%87%E6%9C%9F%E6%80%BB%E7%BB%93/"/>
+      <url>/2023/08/29/%E5%81%87%E6%9C%9F%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h3 id="慎独-🤷‍♂️"><a href="#慎独-🤷‍♂️" class="headerlink" title="慎独 🤷‍♂️"></a>慎独 🤷‍♂️</h3><ol><li>首先一点，就是尽量慎独，独处很是可怕，不是说不推荐独处，一个有理想，有追求的人独处的时候，可以感到事情很多，也很有效果，但是有后路，以及有任何因素影响的年轻人独处的时候，想的就可能不是什么理想了，而是时时刻刻想着什么时候结束，什么时候舒服一下……等等，甚是可怕</li><li>就是尽量给自己找事情做，别一件事托很久，那样反而没有效率，并且容易做不成。就盯着一件事做，直到结束，并且不要提前结束，完完全全给它做完，这就是最好的做法，人们总说聪明的人总是会偷懒，但是总是偷懒，会让你不聪明！</li><li>不要轻易放弃，面对困难也好，难题也罢，反正人生这么多大灾大难都过来了，为何这一小段的难题就困住你了。面对技术方面的难题，直接攻破，直接使用最佳方案替换。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 暑假学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>碧蓝档案池子[更]</title>
       <link href="/2023/08/07/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88%E6%B1%A0%E5%AD%90/"/>
       <url>/2023/08/07/%E7%A2%A7%E8%93%9D%E6%A1%A3%E6%A1%88%E6%B1%A0%E5%AD%90/</url>
