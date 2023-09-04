@@ -378,7 +378,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -400,8 +400,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E5%88%86%E7%B1%BB1/" class="post-detail-header_category">
-              分类1
+            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-detail-header_category">
+              开发
             </a>
           
         </span>
@@ -425,18 +425,172 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h3 id="git工作流程"><a href="#git工作流程" class="headerlink" title="git工作流程"></a>git工作流程</h3><p>以下是git的工作流程</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" class="lazyload placeholder" data-srcset="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="git工作流程"></p>
+<p>工作大致就是三个操作：<strong>修改、提交、推送</strong></p>
+<h3 id="git工作区"><a href="#git工作区" class="headerlink" title="git工作区"></a>git工作区</h3><ul>
+<li><strong>工作区</strong>：就是平常的工作目录，项目文件夹</li>
+<li>**暂存区(stage&#x2F;index)**：存放在<code>.git</code>目录下面的index文件夹下面 有时也叫索引区</li>
+<li><strong>版本库</strong>：工作区一个隐藏目录<code>.git</code>，这个文件夹就是git的版本库</li>
+</ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" class="lazyload placeholder" data-srcset="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="git工作区和版本库中间的关系"></p>
+<ul>
+<li>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage&#x2F;index），标记为 “master” 的是 master 分支所代表的目录树。</li>
+<li>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</li>
+<li>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git&#x2F;objects” 目录下，里面包含了创建的各种对象及内容。</li>
+<li>当对工作区修改（或新增）的文件执行 <code>git add</code> 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
+<li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行<code>git reset HEAD</code>命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
+<li>当执行 <code>git rm --cached  &lt;file&gt;</code> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
+<li>当执行 <code>git checkout .</code> 或者 <code>git checkout -- &lt;file&gt;</code> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区中的改动。</li>
+<li>当执行 <code>git checkout HEAD .</code> 或者 <code>git checkout HEAD &lt;file&gt;</code>命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</li>
+</ul>
+<h3 id="git创建仓库"><a href="#git创建仓库" class="headerlink" title="git创建仓库"></a>git创建仓库</h3><p>当前文件夹创建仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init <span class="comment"># 指定本文件夹为git仓库</span></span><br></pre></td></tr></table></figure>
+
+<p>指定文件夹创建仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init directory <span class="comment"># 指定该文件夹为git仓库</span></span><br></pre></td></tr></table></figure>
+
+<p>克隆仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt; <span class="comment"># repo：克隆仓库链接 directory：目录</span></span><br></pre></td></tr></table></figure>
+
+<p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list <span class="comment"># 显示当前配置</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config -e <span class="comment"># 针对当前仓库</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config -e --global   <span class="comment"># 针对系统上所有仓库</span></span><br></pre></td></tr></table></figure>
+
+<p>设置提交代码的用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;runoob&quot;</span></span><br><span class="line">git config --global user.email <span class="built_in">test</span>@runoob.com</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="git基本操作"><a href="#git基本操作" class="headerlink" title="git基本操作"></a>git基本操作</h3><p>Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。</p>
+<blockquote>
+<p>Git 常用的是以下 6 个命令：<strong>git clone</strong>、<strong>git push</strong>、<strong>git add</strong> 、<strong>git commit</strong>、<strong>git checkout</strong>、<strong>git pull</strong></p>
+</blockquote>
+<p><img src="https://blog.znxs.vip/znxs/znxsgit-command.jpg" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/znxsgit-command.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="git操作演示"></p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>workspace：工作区</li>
+<li>staging area：暂存区&#x2F;缓存区</li>
+<li>local repository：版本库或本地仓库</li>
+<li>remote repository：远程仓库</li>
+</ul>
+<h5 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init <span class="comment"># 参考初始化</span></span><br><span class="line">git add . <span class="comment"># 添加本地所有文件到暂存区</span></span><br><span class="line">git commit <span class="comment"># 提交 将暂存区文件提交到仓库中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果想要跳过add步骤 可以直接使用-a 提交 m 表示提交日志</span></span><br><span class="line">git commit -am</span><br></pre></td></tr></table></figure>
+
+<h5 id="创建仓库命令"><a href="#创建仓库命令" class="headerlink" title="创建仓库命令"></a>创建仓库命令</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init	<span class="comment"># 初始化仓库</span></span><br><span class="line">git <span class="built_in">clone</span>	<span class="comment"># 拷贝一份远程仓库，也就是下载一个项目。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add	<span class="comment"># 添加文件到暂存区</span></span><br><span class="line">git status	<span class="comment"># 查看仓库当前的状态，显示有变更的文件。</span></span><br><span class="line">git diff	<span class="comment"># 比较文件的不同，即暂存区和工作区的差异。</span></span><br><span class="line">git commit	<span class="comment"># 提交暂存区到本地仓库。</span></span><br><span class="line">git reset	<span class="comment"># 回退版本。</span></span><br><span class="line">git <span class="built_in">rm</span>	<span class="comment"># 将文件从暂存区和工作区中删除。</span></span><br><span class="line">git <span class="built_in">mv</span>	<span class="comment"># 移动或重命名工作区文件。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span>	  <span class="comment"># 查看历史提交记录</span></span><br><span class="line">git blame &lt;file&gt; <span class="comment"># 以列表形式查看指定文件的历史修改记录</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote	<span class="comment"># 远程仓库操作</span></span><br><span class="line">git fetch	<span class="comment"># 从远程获取代码库</span></span><br><span class="line">git pull	<span class="comment"># 下载远程代码并合并</span></span><br><span class="line">git push	<span class="comment"># 上传远程代码并合并</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h3><p><img src="https://static.runoob.com/images/svg/git-brance.svg" class="lazyload placeholder" data-srcset="https://static.runoob.com/images/svg/git-brance.svg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="git分支"></p>
+<p>创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchname)</span><br><span class="line">或</span><br><span class="line">git switch -c (branchname) # 创建分支并且切换到该分支</span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checked (branchname)</span><br><span class="line">git switch (brachname)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录</p>
+</blockquote>
+<p>合并分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge </span><br></pre></td></tr></table></figure>
+
+<p>你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支</p>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir gitdemo</span><br><span class="line">$ cd gitdemo/</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository...</span><br><span class="line">$ touch README</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &#x27;第一次版本提交&#x27;</span><br><span class="line">[master (root-commit) 3b58100] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出分支"><a href="#列出分支" class="headerlink" title="列出分支"></a>列出分支</h5><p>列出分支基本命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>没有参数的时候，默认是所在的本地分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>当执行<code>git init</code>的时候，git会默认创建master分支 如果需要手动创建一个分支，执行&#96;&#96;git branch (branchname) &#96;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch testing</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  testing</span><br></pre></td></tr></table></figure>
+
+<p>新建一个分支之后，如果后面又有了提交的更新，然后有切换到了testing分支，git将还原你的工作目录到创建分支的样子</p>
+<h5 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;runoob.com&#x27;</span> &gt; test.txt</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&#x27;add test.txt&#x27;</span></span><br><span class="line">[master 3e92c19] add test.txt</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test.txt</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        test.txt</span><br><span class="line">$ git checkout testing</span><br><span class="line">Switched to branch <span class="string">&#x27;testing&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README</span><br></pre></td></tr></table></figure>
+
+<p>当在<strong>master</strong>添加一个文件到暂存区之后，然后提交到本地仓库之后</p>
+<p>再切换到<strong>testin</strong>分支的时候 发现添加的<code>test.txt</code>文件没了，但是切换到<strong>master</strong>分支的时候，它又重新出现了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">&#x27;master&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        test.txt</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以使用 <code>git checkout -b (branchname)/git switch -c (branchname)</code> 命令来创建新分支并立即切换到该分支下，从而在该分支中操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b newtest</span><br><span class="line">Switched to a new branch <span class="string">&#x27;newtest&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README.md  test.txt</span><br><span class="line">$ git <span class="built_in">rm</span> test.txt </span><br><span class="line"><span class="built_in">rm</span> <span class="string">&#x27;test.txt&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README</span><br><span class="line">$ <span class="built_in">touch</span> runoob.php</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -am <span class="string">&#x27;removed test.txt、add runoob.php&#x27;</span></span><br><span class="line">[newtest c1501a2] removed test.txt、add runoob.php</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 runoob.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        runoob.php</span><br><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">&#x27;master&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        test.txt</span><br></pre></td></tr></table></figure>
+
+<p>当创建了一个分支，在该分支上移除了一些文件 test.txt，并添加了 znxs.php 文件，然后切换回我们的主分支，删除的 test.txt 文件又回来了，且新增加的 znxs.php 不存在主分支中。</p>
+<p>使用分支将工作切分开来，从而让我们能够在不同开发环境中做事，并来回切换。</p>
+<h5 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h5><p>删除分支命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d (branchname)</span><br></pre></td></tr></table></figure>
+
+<p>如果要删除testing分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  testing</span><br><span class="line">  newTest</span><br><span class="line">$ git branch -d testing</span><br><span class="line">Deleted branch testing (was 85fc7e7).</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  newTest</span><br></pre></td></tr></table></figure>
+
+<h5 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h5><p>一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用以下命令将任何分支合并到当前分支中去：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  newTest</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        test.txt</span><br><span class="line">$ git merge newTest  <span class="comment"># 注意 在哪个分支下面使用 就是将需要合并的分支合并到该分支下 例如：master 分支下执行git merge newTest 就是将newTest 分支合并到master test将被删除</span></span><br><span class="line">Updating 3e92c19..c1501a2</span><br><span class="line">Fast-forward</span><br><span class="line"> znxs.php | 0</span><br><span class="line"> test.txt   | 1 -</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 znxs.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">README        znxs.php</span><br></pre></td></tr></table></figure>
+
+<p>将 newtest 分支合并到主分支去，test.txt 文件被删除</p>
+<h5 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h5><p>合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  newTest</span><br><span class="line">$ <span class="built_in">cat</span> znxs.php</span><br></pre></td></tr></table></figure>
+
+<p>新建一个分支changeTest 切换过去，将znxs.php内容修改为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;runoob&#x27;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am <span class="string">&#x27;changed the znxs.php&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改的内容提交到 change_site 分支中。 现在，假如切换回 master 分支我们可以看内容恢复到我们修改前的(空文件，没有代码)，我们再次修改 znxs.php 文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">&#x27;master&#x27;</span></span><br><span class="line">$ <span class="built_in">cat</span> znxs.php</span><br><span class="line">$ vim znxs.php    <span class="comment"># 修改内容如下</span></span><br><span class="line">$ <span class="built_in">cat</span> znxs.php</span><br><span class="line">&lt;?php</span><br><span class="line"><span class="built_in">echo</span> 1;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --git a/znxs.php b/znxs.php</span><br><span class="line">index e69de29..ac60739 100644</span><br><span class="line">--- a/znxs.php</span><br><span class="line">+++ b/znxs.php</span><br><span class="line">@@ -0,0 +1,3 @@</span><br><span class="line">+&lt;?php</span><br><span class="line">+<span class="built_in">echo</span> 1;</span><br><span class="line">+?&gt;</span><br><span class="line">$ git commit -am <span class="string">&#x27;修改代码&#x27;</span></span><br><span class="line">[master c68142b] 修改代码</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br></pre></td></tr></table></figure>
+
+<p>现在这些改变已经记录到我的 “master” 分支了。接下来我们将 “change_site” 分支合并过来。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git merge change_site</span><br><span class="line">Auto-merging znxs.php</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> znxs.php</span><br><span class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> znxs.php     <span class="comment"># 打开文件，看到冲突内容</span></span><br><span class="line">&lt;?php</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="string">HEAD</span></span><br><span class="line"><span class="string">echo 1;</span></span><br><span class="line"><span class="string">=======</span></span><br><span class="line"><span class="string">echo &#x27;znxs&#x27;;</span></span><br><span class="line"><span class="string">&gt;&gt;&gt;&gt;&gt;&gt;&gt; change_site</span></span><br><span class="line"><span class="string">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们将前一个分支合并到 master 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ vim znxs.php </span><br><span class="line">$ <span class="built_in">cat</span> znxs.php</span><br><span class="line">&lt;?php</span><br><span class="line"><span class="built_in">echo</span> 1;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;znxs&#x27;</span>;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --cc znxs.php</span><br><span class="line">index ac60739,b63d7d7..0000000</span><br><span class="line">--- a/runoob.php</span><br><span class="line">+++ b/runoob.php</span><br><span class="line">@@@ -1,3 -1,3 +1,4 @@@</span><br><span class="line">  &lt;?php</span><br><span class="line"> +<span class="built_in">echo</span> 1;</span><br><span class="line">+ <span class="built_in">echo</span> <span class="string">&#x27;znxs&#x27;</span>;</span><br><span class="line">  ?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">UU runoob.php</span><br><span class="line">$ git add runoob.php</span><br><span class="line">$ git status -s</span><br><span class="line">M  runoob.php</span><br><span class="line">$ git commit</span><br><span class="line">[master 88afe0e] Merge branch <span class="string">&#x27;change_site&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>现在成功解决了合并中的冲突，并提交了结果</p>
+<h3 id="git标签"><a href="#git标签" class="headerlink" title="git标签"></a>git标签</h3><p>当使用版本更新，或者一个比较重要的阶段，需要对快照进行标记，就可以对快照打上标签<code>git tag</code></p>
+<p>例如 user_center发布了一年版本大更新 可以用<code>git tag -a v1.0</code>打上(HEAD)v1.0标签</p>
+<p><code>-a</code>表示带上注解的标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a v1.0</span><br></pre></td></tr></table></figure>
+
+<p>当执行git tag -a命令的时候 git可能会打开编辑器写一句注解</p>
+<p>查看标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --decorate</span><br></pre></td></tr></table></figure>
+
+<p>如果要查看所有的标签可以使用以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br></pre></td></tr></table></figure>
+
+<p>指定标签信息命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tagname&gt; -m <span class="string">&quot;znxs.com标签&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>PGP标签命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -s &lt;tagname&gt; -m <span class="string">&quot;znxs.com标签&quot;</span></span><br></pre></td></tr></table></figure>
+
+
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E6%A0%87%E7%AD%BE1/" class="">
-              标签1
+            <a href="/tags/git/" class="">
+              git
             </a>
           
-            <a href="/tags/%E6%A0%87%E7%AD%BE2/" class="">
-              标签2
+            <a href="/tags/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="">
+              使用教程
             </a>
           
         </div>
@@ -706,7 +860,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-text">git工作区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">git创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">git基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%E5%91%BD%E4%BB%A4"><span class="toc-text">创建仓库命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-text">提交与修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="toc-text">提交日志</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-text">远程操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-text">git分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E5%88%86%E6%94%AF"><span class="toc-text">列出分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B2"><span class="toc-text">实例2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="toc-text">分支合并</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%86%B2%E7%AA%81"><span class="toc-text">合并冲突</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E6%A0%87%E7%AD%BE"><span class="toc-text">git标签</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -741,7 +895,7 @@
             <div class="post-img-box">
               <a href="/2023/09/04/git%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="lazyload placeholder" data-srcset="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
