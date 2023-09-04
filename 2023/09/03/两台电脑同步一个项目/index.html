@@ -433,14 +433,14 @@
 
 <h5 id="如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"><a href="#如果有别的项目-已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作" class="headerlink" title="如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作"></a>如果有别的项目 已经开发好了的项目，直接复制到刚刚那个文件夹内重复添加推送操作</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错"><a href="#或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错" class="headerlink" title="或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)"></a>或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /project</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 直接将整个项目推送到远程仓库</span></span><br><span class="line">gut push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错"><a href="#或者直接添加该项目到远程仓库内-还没试过这样，不知道会不会报错" class="headerlink" title="或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)"></a>或者直接添加该项目到远程仓库内 (还没试过这样，不知道会不会报错)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /project</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 直接将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="第二台电脑"><a href="#第二台电脑" class="headerlink" title="第二台电脑"></a>第二台电脑</h3><blockquote>
 <p>注意：执行之前确保是第二个账号并且在第一个账号的仓库成员中</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目文件夹内 初始化git</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 查看远程分支</span></span><br><span class="line">git remote -v </span><br><span class="line"><span class="comment"># 克隆仓库下来 (这是在配置好邮箱密码前提下)</span></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br><span class="line"><span class="comment"># 完成之后项目里面就有一个文件夹 是该项目的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /项目文件夹</span><br><span class="line"><span class="comment"># 可以修改文件 添加文件操作</span></span><br><span class="line"><span class="built_in">touch</span> a.txt</span><br><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目文件夹内 初始化git</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 添加远程仓库(gitee)</span></span><br><span class="line">git remote add origin 仓库地址</span><br><span class="line"><span class="comment"># 查看远程分支</span></span><br><span class="line">git remote -v </span><br><span class="line"><span class="comment"># 克隆仓库下来 (这是在配置好邮箱密码前提下)</span></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br><span class="line"><span class="comment"># 完成之后项目里面就有一个文件夹 是该项目的文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /项目文件夹</span><br><span class="line"><span class="comment"># git 初始化</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 可以修改文件 添加文件操作</span></span><br><span class="line"><span class="built_in">touch</span> a.txt</span><br><span class="line"><span class="comment"># 添加所有项目文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 将暂存区中的文件添加到仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"><span class="comment"># 将整个项目推送到远程仓库</span></span><br><span class="line">git push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>到此 两个电脑就全部可以修改同一个项目了，但是还没结束，因为修改之后怎么同步到本地项目呢</p>
@@ -452,8 +452,6 @@
 
 <p>如果newVersion不再使用，可以删掉</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d newVersion</span><br></pre></td></tr></table></figure>
-
-
 
 <h5 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h5><p>直接pull 不过有个弊端 不知道更新了什么</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
@@ -500,6 +498,24 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/2023/09/04/git%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">git使用实践</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+      </div> -->
+    </a>
+  </div>
 
 
 
@@ -770,6 +786,27 @@
             
 
             <div class="post-img-box">
+              <a href="/2023/09/04/git%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">09-04</span>
+                
+              </div>
+              <a class="post-title" href="/2023/09/04/git%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/">git使用实践</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/2023/09/03/%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="lazyload placeholder" data-srcset="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -845,27 +882,6 @@
                 
               </div>
               <a class="post-title" href="/2023/08/05/BA%E5%BB%BA%E8%AE%AE%E6%8A%BD%E5%8F%96/">BA建议抽取</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/07/21/%E4%B8%8A%E6%B5%B7bw%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://img.tukuppt.com/png_preview/00/02/31/sn7R13Trcj.jpg!/fw/780" class="lazyload placeholder" data-srcset="https://img.tukuppt.com/png_preview/00/02/31/sn7R13Trcj.jpg!/fw/780" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-21</span>
-                
-              </div>
-              <a class="post-title" href="/2023/07/21/%E4%B8%8A%E6%B5%B7bw%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">上海bw旅游攻略</a>
             </div>
           </div>
         
