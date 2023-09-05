@@ -13,16 +13,16 @@
       
       <categories>
           
-          <category> 分类1 </category>
+          <category> 使用技术 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 标签1 </tag>
+            <tag> postman </tag>
             
-            <tag> 标签2 </tag>
+            <tag> 软件测试 </tag>
             
         </tags>
       
@@ -40,16 +40,18 @@
       
       <categories>
           
-          <category> 分类1 </category>
+          <category> 实用技术 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 标签1 </tag>
+            <tag> nignx </tag>
             
-            <tag> 标签2 </tag>
+            <tag> 部署项目 </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
