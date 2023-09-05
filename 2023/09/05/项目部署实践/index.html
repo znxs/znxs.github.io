@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>znxsOne | znxs</title>
+  <title>项目部署实践 | znxs</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -378,21 +378,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://blog.znxs.vip/znxs/845129.png')">
+  background-position: center center;position: relative;background-image:url('https://blog.znxs.vip/znxs/1059288.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        znxsOne
+        项目部署实践
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-06-20 |
+          <i class="fas fa-calendar"></i> 发表于：2023-09-05 |
         </span>
       
 
@@ -425,9 +425,76 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="我的First-Blog"><a href="#我的First-Blog" class="headerlink" title="我的First Blog"></a>我的First Blog</h1><p>  <img src="https://blog.znxs.vip/znxs/845129.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/845129.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="测试图片"></p>
-<p>测试图片</p>
-<h3 id="请欣赏我的舞蹈吧"><a href="#请欣赏我的舞蹈吧" class="headerlink" title="请欣赏我的舞蹈吧"></a>请欣赏我的舞蹈吧</h3>
+        <p>项目部署</p>
+<h3 id="nginx-部署"><a href="#nginx-部署" class="headerlink" title="nginx 部署"></a>nginx 部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载nginx</span></span><br><span class="line">24  <span class="built_in">cd</span> services/</span><br><span class="line">25  curl -o nginx-1.24.0.tar.gz https://nginx.org/download/nginx-1.24.0.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">26  tar -zxvf nginx-1.24.0.tar.gz </span><br><span class="line">27  <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 进入解压目录</span></span><br><span class="line">28  <span class="built_in">cd</span> nginx-1.24.0/</span><br><span class="line">29  <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 运行配置文件</span></span><br><span class="line">30  ./configure</span><br><span class="line"><span class="comment"># 安装pcre</span></span><br><span class="line">31  apt-get install libpcre3 libpcre3-dev</span><br><span class="line">32  ./configure</span><br><span class="line"><span class="comment"># 安装zlib 开发版</span></span><br><span class="line">sudo apt install zlib1g-dev</span><br><span class="line"><span class="comment"># 安装openssl</span></span><br><span class="line">33  apt-get install openssl libssl-dev</span><br><span class="line">34  ./configure</span><br><span class="line"><span class="comment"># 设置系统配置参数</span></span><br><span class="line">37  ./configure --with-http_ssl_module --with-http_v2_module --with-stream</span><br><span class="line"><span class="comment"># 开始编译</span></span><br><span class="line">39  make</span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">40  make install</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入目录配置环境变量</span></span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>新增环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/nginx/sbin	</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新激活环境变量</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="comment"># 启动nginx</span></span><br><span class="line">nginx</span><br><span class="line"><span class="comment"># 查看端口启动情况</span></span><br><span class="line">netstat -ntlp</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="部署前端项目"><a href="#部署前端项目" class="headerlink" title="部署前端项目"></a>部署前端项目</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 放文件入服务器</span></span><br><span class="line"><span class="comment"># 下载解压软件</span></span><br><span class="line">82  apt install unzip</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">83  unzip dist.zip -d user_center_b</span><br><span class="line"><span class="comment"># 删除多余目录</span></span><br><span class="line">84  <span class="built_in">cd</span> user_center_b/dist</span><br><span class="line">85  <span class="built_in">mv</span> * ../</span><br><span class="line">86  <span class="built_in">cd</span> ../</span><br><span class="line">87  <span class="built_in">rm</span> -r dist</span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">88  vim /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location/&#123;</span><br><span class="line">	root	/root/services/user_center_b; # 修改后的 配置目录</span><br><span class="line">	index 	index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user root;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新加载nginx</span></span><br><span class="line">nginx -s reload</span><br><span class="line"><span class="comment"># 查看nginx 详细</span></span><br><span class="line">ps -ef|grep <span class="string">&#x27;nginx&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>访问公网IP响应</p>
+<p><a target="_blank" rel="noopener" href="http://101.35.50.21/">403 Forbidden</a></p>
+<p>部署宝塔</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">外网面板地址: https://47.92.126.51:29319/4e1eb856</span><br><span class="line">内网面板地址: https://172.17.144.26:29319/4e1eb856</span><br><span class="line">username: qysqtvoz</span><br><span class="line">password: f27640e0</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="后端部署"><a href="#后端部署" class="headerlink" title="后端部署"></a>后端部署</h5><p>java、maven</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装jdk</span></span><br><span class="line">apt install -y openjdk-8-jdk  <span class="comment"># 因为使用apt安装的java 所以不用配置环境变量</span></span><br><span class="line"><span class="comment"># 安装maven</span></span><br><span class="line">curl -o apache-maven-3.9.4-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf apache-maven-3.9.4-bin.tar.gz</span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>最后一行添加为maven文件路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/usr/local/nginx/sbin:/root/services/apache-maven-3.9.4/bin</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 刷新配置文件</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="comment"># mvn -v 可以看到maven可以使用</span></span><br><span class="line">mvn -v</span><br><span class="line">$ Apache Maven 3.9.4 (dfbb324ad4a7c8fb0bf182e6d91b0ae20e3d2dd9)</span><br><span class="line">$ Maven home: /root/services/apache-maven-3.9.4</span><br><span class="line">$ Java version: 1.8.0_362, vendor: Private Build, runtime: /usr/lib/jvm/java-8-openjdk-amd64/jre</span><br><span class="line">$ Default locale: en_US, platform encoding: UTF-8</span><br><span class="line">$ OS name: <span class="string">&quot;linux&quot;</span>, version: <span class="string">&quot;4.15.0-213-generic&quot;</span>, <span class="built_in">arch</span>: <span class="string">&quot;amd64&quot;</span>, family: <span class="string">&quot;unix&quot;</span></span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">apt install -y git</span><br><span class="line"><span class="comment"># 使用git 克隆代码</span></span><br><span class="line">git <span class="built_in">clone</span> https://gitee.com/znxs159357/user_center_c.git</span><br><span class="line"><span class="comment"># 记得输入gitee用户名和秘密啊</span></span><br><span class="line">username：</span><br><span class="line">password：</span><br><span class="line"><span class="comment"># 用户maven打包 用-DskipTests跳过测试</span></span><br><span class="line"><span class="comment"># mvn package -DskipTests</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接把打包好了的jar包上传到项目user_center_c文件夹下</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 给jar包添加可执行权限</span></span><br><span class="line"><span class="built_in">chmod</span> a+x user_center_c-0.0.1-SNAPSHOT.jar</span><br><span class="line"><span class="comment"># 启动项目 </span></span><br><span class="line">java -jar user-center-c-0.0.1-SNAPSHOT.jar --spring.profiles.active=pord</span><br><span class="line"><span class="comment"># 如果项目这样运行就会卡死页面 并且ssh关闭项目也会关闭</span></span><br><span class="line"><span class="comment"># 所以就要让项目后台运行</span></span><br><span class="line"><span class="built_in">nohup</span> java -jar user-center-c-0.0.1-SNAPSHOT.jar --spring.profiles.active=pord &amp;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@VM-4-7-ubuntu:~/services/user_center_c<span class="comment"># nohup java -jar user-center-c-0.0.1-SNAPSHOT.jar --spring.profiles.active=pord &amp;</span></span><br><span class="line">[1] 29853</span><br><span class="line"><span class="built_in">nohup</span>: ignoring input and appending output to <span class="string">&#x27;nohup.out&#x27;</span></span><br><span class="line">root@VM-4-7-ubuntu:~/services/user_center_c<span class="comment"># jobs</span></span><br><span class="line">[1]+  Running                 <span class="built_in">nohup</span> java -jar user-center-c-0.0.1-SNAPSHOT.jar --spring.profiles.active=pord &amp;</span><br><span class="line">root@VM-4-7-ubuntu:~/services/user_center_c<span class="comment"># netstat -ntlp</span></span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    </span><br><span class="line">tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      821/rpcbind         </span><br><span class="line">tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1469/nginx: worker  </span><br><span class="line">tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      1223/systemd-resolv </span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      14364/sshd          </span><br><span class="line">tcp        0      0 127.0.0.1:6010          0.0.0.0:*               LISTEN      12081/sshd: root@pt </span><br><span class="line">tcp        0      0 127.0.0.1:6011          0.0.0.0:*               LISTEN      32447/sshd: root@pt </span><br><span class="line">tcp6       0      0 :::111                  :::*                    LISTEN      821/rpcbind         </span><br><span class="line">tcp6       0      0 :::8080                 :::*                    LISTEN      29853/java          </span><br><span class="line">root@VM-4-7-ubuntu:~/services/user_center_c<span class="comment"># jps</span></span><br><span class="line">30225 Jps</span><br><span class="line">29853 jar</span><br></pre></td></tr></table></figure>
+
+
+
+<p>到这里，项目的部署就完成了，虽然没有数据库，但是前后端都已经部署完成了</p>
+<h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><h3 id="宝塔linux"><a href="#宝塔linux" class="headerlink" title="宝塔linux"></a>宝塔linux</h3><p>直接在服务器里面安装宝塔</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">外网面板地址:  http://101.35.50.21:8888/tencentcloud</span><br><span class="line">内网面板地址:  http://10.0.4.7:8888/tencentcloud</span><br><span class="line">username: norwtlt4</span><br><span class="line">password: d2102b31f9ca</span><br></pre></td></tr></table></figure>
+
+<p>安装完宝塔记得关闭tomcat服务器</p>
+<h3 id="Docker部署"><a href="#Docker部署" class="headerlink" title="Docker部署"></a>Docker部署</h3><p>宝塔下载Docker</p>
+<p>后端 Dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> maven:<span class="number">3.5</span>-jdk-<span class="number">8</span>-alpine as builder</span><br><span class="line"></span><br><span class="line"><span class="comment"># Copy local code to the container image.</span></span><br><span class="line"><span class="comment"># 指定工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="comment"># pom复制到工作目录中</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> pom.xml .</span></span><br><span class="line"><span class="comment"># 复制源码到工作目录</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> src ./src</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Build a release artifact.</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> mvn package -DskipTests</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Run the web service on container startup.</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>,<span class="string">&quot;-jar&quot;</span>,<span class="string">&quot;/app/target/father-backend-0.0.1-SNAPSHOT.jar&quot;</span>,<span class="string">&quot;--spring.profiles.active=prod&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>dockerfile 文件名记得别取错了</p>
+<p>拉取项目到</p>
+<p><code>/www/wwwroot/目录下</code></p>
+<p>创建docker镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t user_center_c:v0.0.1 .</span><br></pre></td></tr></table></figure>
+
+
+
+<p>后端<code>Dockerfile</code></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> nginx</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /usr/share/nginx/html/</span></span><br><span class="line"><span class="keyword">USER</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./docker/nginx.conf /etc/nginx/conf.d/default.conf</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> ./dist  /usr/share/nginx/html/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;nginx&quot;</span>, <span class="string">&quot;-g&quot;</span>, <span class="string">&quot;daemon off;&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>nginx.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    # gzip config</span><br><span class="line">    gzip on;</span><br><span class="line">    gzip_min_length 1k;</span><br><span class="line">    gzip_comp_level 9;</span><br><span class="line">    gzip_types text/plain text/css text/javascript application/json application/javascript application/x-javascript application/xml;</span><br><span class="line">    gzip_vary on;</span><br><span class="line">    gzip_disable &quot;MSIE [1-6]\.&quot;;</span><br><span class="line"></span><br><span class="line">    root /usr/share/nginx/html;</span><br><span class="line">    include /etc/nginx/mime.types;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri /index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拉取项目到</p>
+<p><code>/www/wwwroot/目录下</code></p>
+<p>创建docker镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t user_center_b:v0.0.1 .</span><br></pre></td></tr></table></figure>
+
+
       </div>
       <div class="post-tags-categories">
         
@@ -452,7 +519,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/06/20/znxsOne/" target="_blank" title="znxsOne">http://znxs.github.io/2023/06/20/znxsOne/</a>
+    <a href="/2023/09/05/项目部署实践/" target="_blank" title="项目部署实践">http://znxs.github.io/2023/09/05/项目部署实践/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -470,45 +537,25 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://blog.znxs.vip/znxs/1059288.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/1059288.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/06/28/%E6%9A%91%E6%9C%9F%E8%A7%84%E5%88%92/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">znxs的暑期规划</div>
-      </div>
-      
-      <!-- <div class="content">
-        znxs
-​		已经大三了，距离做个社畜已经不远了，最后一个可以浪费的暑假，必须有些明确的规划，不然还怎么做自己，还怎么
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://blog.znxs.vip/znxs/961638.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/961638.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="lazyload placeholder" data-srcset="https://tse1-mm.cn.bing.net/th/id/OIP-C.R1Bi3fNDyYjLsXdg9OqoIAHaEo?w=315&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/06/17/java%E5%AD%A6%E4%B9%A0/" class="post-nav-link">
+    <a href="/2023/09/04/git%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">java学习</div>
+        <div class="title-text">git使用实践</div>
       </div>
       <!-- <div class="content">
-        Java学习路线🐶  Yeal！🐶
+        Gitgit工作流程以下是git的工作流程
 
-
-如果访问很慢就是用外网访问，Github是这样的🐶
-
-java后端开发基础
+工作大致就是三个操作：修改、提交、推送
+git工作区
+工作区：就是平常的工
       </div> -->
     </a>
   </div>
@@ -729,7 +776,7 @@ java后端开发基础
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E7%9A%84First-Blog"><span class="toc-text">我的First Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%AC%A3%E8%B5%8F%E6%88%91%E7%9A%84%E8%88%9E%E8%B9%88%E5%90%A7"><span class="toc-text">请欣赏我的舞蹈吧</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx-%E9%83%A8%E7%BD%B2"><span class="toc-text">nginx 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-text">部署前端项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-text">后端部署</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-text">方式二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9D%E5%A1%94linux"><span class="toc-text">宝塔linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker%E9%83%A8%E7%BD%B2"><span class="toc-text">Docker部署</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
