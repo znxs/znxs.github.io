@@ -1679,7 +1679,7 @@ JavaScript是客户端和服务
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Sep 09 2023 15:05:50 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Sat Sep 09 2023 15:44:34 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-09-09 日</div>
           
         </div>
@@ -2414,23 +2414,31 @@ JavaScript是客户端和服务
 <!-- 评论所需js -->
 
   
-    <script src="/js/twikoo/twikoo.all.min.js"></script>
-
+    <script src="/js/waline/waline.min.js"></script>
 <script type="text/javascript">
-  comment_el = '#tcomment';
-  load_twikoo = function () {
-    if ($(comment_el).length) {
-      twikoo.init({
-        envId: 'znxs-twikoo.vercel.app',
-        el: '#tcomments',
-        region: '',
-        path: ''
-      })
+  comment_el = '#waline-comment';
+  var waline;
+  loadWaline = function () {
+    if (!$(comment_el).length) {
+      return;
     }
+    var walineEmoji = 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo';
+    walineEmoji = walineEmoji.split(',')
+
+    waline = Waline({
+      el: comment_el,
+      serverURL: 'https:waline-znxs.vercel.app',
+      lang: 'zh-CN',
+      vistor: '',
+      emoji: walineEmoji,
+      login: 'enable',
+      pageSize: '10',
+      copyright: true
+    });
   }
-  $(document).ready(load_twikoo);
+  $(document).ready(loadWaline);
   document.addEventListener('pjax:complete', function () {
-    load_twikoo();
+    loadWaline();
   });
 </script>
   

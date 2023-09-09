@@ -636,8 +636,9 @@ Day 1
 
   <div id="myComment">
     
-      <div id="tcomment"></div>
-
+      <section id="waline-box">
+  <div id="waline-comment"></div>
+</section>
     
   </div>
 
@@ -1696,23 +1697,31 @@ Day 1
 <!-- 评论所需js -->
 
   
-    <script src="/js/twikoo/twikoo.all.min.js"></script>
-
+    <script src="/js/waline/waline.min.js"></script>
 <script type="text/javascript">
-  comment_el = '#tcomment';
-  load_twikoo = function () {
-    if ($(comment_el).length) {
-      twikoo.init({
-        envId: 'znxs-twikoo.vercel.app',
-        el: '#tcomments',
-        region: '',
-        path: ''
-      })
+  comment_el = '#waline-comment';
+  var waline;
+  loadWaline = function () {
+    if (!$(comment_el).length) {
+      return;
     }
+    var walineEmoji = 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo';
+    walineEmoji = walineEmoji.split(',')
+
+    waline = Waline({
+      el: comment_el,
+      serverURL: 'https:waline-znxs.vercel.app',
+      lang: 'zh-CN',
+      vistor: '',
+      emoji: walineEmoji,
+      login: 'enable',
+      pageSize: '10',
+      copyright: true
+    });
   }
-  $(document).ready(load_twikoo);
+  $(document).ready(loadWaline);
   document.addEventListener('pjax:complete', function () {
-    load_twikoo();
+    loadWaline();
   });
 </script>
   
