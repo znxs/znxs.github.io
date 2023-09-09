@@ -1482,7 +1482,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Sep 09 2023 16:24:14 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Sat Sep 09 2023 16:26:42 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-09-09 日</div>
           
         </div>
@@ -2277,7 +2277,7 @@
     if (!$(comment_el).length) {
       return;
     }
-    var walineEmoji = 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo';
+    var walineEmoji = 'https://unpkg.com/@waline/emojis@1.2.0/bilibili';
     walineEmoji = walineEmoji.split(',')
 
     waline = Waline({
@@ -2286,8 +2286,8 @@
       lang: 'zh-CN',
       vistor: '',
       emoji: walineEmoji,
-      login: 'enable',
-      pageSize: '10',
+      login: 'able',
+      pageSize: '10,',
       copyright: true
     });
   }

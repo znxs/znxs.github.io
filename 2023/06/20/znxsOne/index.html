@@ -1748,7 +1748,7 @@ java后端开发基础
     if (!$(comment_el).length) {
       return;
     }
-    var walineEmoji = 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo';
+    var walineEmoji = 'https://unpkg.com/@waline/emojis@1.2.0/bilibili';
     walineEmoji = walineEmoji.split(',')
 
     waline = Waline({
@@ -1757,8 +1757,8 @@ java后端开发基础
       lang: 'zh-CN',
       vistor: '',
       emoji: walineEmoji,
-      login: 'enable',
-      pageSize: '10',
+      login: 'able',
+      pageSize: '10,',
       copyright: true
     });
   }
