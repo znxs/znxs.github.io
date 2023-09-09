@@ -1132,68 +1132,25 @@ Postman 的使用教程（详细）_postman使用教程_一个橙子呀的博客
 <!-- 评论所需js -->
 
   
-    <script type="text/javascript">
-  var utteranceCommon = {};
+    <script src="/js/twikoo/twikoo.all.min.js"></script>
 
-  function check_utterance() {
-    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
-    if (isDark) {
-      utteranceCommon.Theme = 'github-dark';
-    } else {
-      utteranceCommon.Theme = 'github-light';
-    }
-
-    return document.getElementById("gitment-container");
-  }
-  comment_el = '#gitment-container';
-  load_utterance = function () {
+<script type="text/javascript">
+  comment_el = '#tcomment';
+  load_twikoo = function () {
     if ($(comment_el).length) {
-      // 匿名函数，防止污染全局变量
-      const HEAD = check_utterance();
-
-      var utterances = document.createElement('script');
-      utterances.type = 'text/javascript';
-      utterances.async = true;
-      utterances.setAttribute('issue-term', 'pathname')
-      utterances.setAttribute('theme', utteranceCommon.Theme)
-      utterances.setAttribute('repo', 'znxs/blog-comment')
-      utterances.crossorigin = 'anonymous';
-      utterances.src = 'https://utteranc.es/client.js';
-      // content 是要插入评论的地方
-      document.getElementById('gitment-container').appendChild(utterances);
-
+      twikoo.init({
+        envId: 'znxs-twikoo',
+        el: '#tcomments',
+        region: '',
+        path: ''
+      })
     }
   }
-
-  function dark_utterance() {
-    const HEAD = check_utterance();
-    if (!HEAD) return;
-    const message = {
-      type: 'set-theme',
-      theme: utteranceCommon.Theme
-    };
-    const utteranceIframe = document.querySelector('iframe');
-    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
-  }
-
-  $(document).ready(load_utterance);
+  $(document).ready(load_twikoo);
   document.addEventListener('pjax:complete', function () {
-    load_utterance();
+    load_twikoo();
   });
-
-  $('.dark').click(function () {
-    setTimeout(() => {
-      dark_utterance();
-    });
-  })
-
 </script>
-
-<style>
-  .utterances {
-    max-width: inherit !important;
-  }
-</style>
   
 
 
