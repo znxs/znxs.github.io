@@ -740,11 +740,11 @@
 </thead>
 <tbody><tr>
 <td>name</td>
-<td></td>
+<td><code>&#123;&#123;name&#125;&#125;</code></td>
 </tr>
 <tr>
 <td>age</td>
-<td></td>
+<td><code>&#123;&#123;age&#125;&#125;</code></td>
 </tr>
 </tbody></table>
 <p>然后点击刚刚的批量运行键，运行，在配置项选择数据</p>
@@ -771,15 +771,15 @@
 <h3 id="请求依赖问题"><a href="#请求依赖问题" class="headerlink" title="请求依赖问题"></a>请求依赖问题</h3><p>以上的接口都是比较简单的接口测试，都是并行接口，如果一个接口数据需要另一个接口数据，这个时候就需要线性的接口传递方法来解决</p>
 <p>举个栗子：有个老师需要登录，来查看学生进行管理</p>
 <p>老师登录之后保存了token(登录认证标识) ，下次登录的时候就不用重新登录了</p>
-<p>新建一个模块，因为父接口需要是第一个接口，而postman集合接口执行顺序就是从前往后，所以放在第一个 第二个放一个子接口1，第三个放其他接口，第四个放子接口2</p>
+<p>新建一个模块，因为父接口需要是第一个接口，而postman集合接口执行顺序就是从前往后，所以放在第一个 第二个放放其他接口，后面放子接口</p>
 <blockquote>
-<p>如果父接口登录正常，则会携带token，并且跳转至子接口1顺序执行父接口-&gt;子接口1-&gt;其他接口</p>
+<p>如果父接口登录正常，则会携带token，并且跳转至子接口1顺序执行父接口-&gt;子接口1-&gt;子接口2</p>
 </blockquote>
-<p><img src="https://blog.znxs.vip/znxs/image-20230911233211412.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/image-20230911233211412.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230911233211412"></p>
+<p><img src="https://blog.znxs.vip/znxs/znxsimage-20230912080711574.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/znxsimage-20230912080711574.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230912080711574"></p>
 <blockquote>
-<p>如果父接口登录错误，则不会带token，并且跳转至子接口2，跳过其他接口，顺序执行父接口-&gt;子接口</p>
+<p>如果父接口登录错误，则不会带token，并且跳转至子接口2，跳过其他接口和子接口1，顺序执行父接口-&gt;子接口2</p>
 </blockquote>
-<p><img src="https://blog.znxs.vip/znxs/image-20230911233300564.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/image-20230911233300564.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230911233300564"></p>
+<p><img src="https://blog.znxs.vip/znxs/znxsimage-20230912080510121.png" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/znxs/znxsimage-20230912080510121.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230912080510121"></p>
 <p>从着可以看出，可以通过逻辑判断跳过接口的执行，不过只有在集合Run的时候才会调用，单个执行并不会跳转请求接口</p>
 <center><strong>等价类<strong/></center>
 
