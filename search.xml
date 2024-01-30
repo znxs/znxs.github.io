@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>计划项目常用技术笔录</title>
+      <link href="/2024/01/30/%E8%AE%A1%E5%88%92%E9%A1%B9%E7%9B%AE%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E7%AC%94%E5%BD%95/"/>
+      <url>/2024/01/30/%E8%AE%A1%E5%88%92%E9%A1%B9%E7%9B%AE%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E7%AC%94%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h2><p><strong>apifox</strong>  接口测试工具</p><p><strong>httpClient</strong>  idea自带接口测试工具</p><p><strong>swagger</strong>+<strong>knife4j</strong> 图形化测试网页</p><p>【注意：使用Knife4j2.0.6及以上的版本，Spring Boot的版本必须大于等于2.2.x】</p><p>maven引入knife4j配置</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.xiaoymin<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>knife4j-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--在引用时请在maven中央仓库搜索2.X最新版本号--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><p>添加配置类config–&gt;Knife4jConfig</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2WebMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Swagger</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(value = &quot;defaultApi&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">defaultApi</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Docket</span> <span class="variable">docket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                <span class="comment">//分组名称</span></span><br><span class="line">                .groupName(<span class="string">&quot;2.X版本&quot;</span>)</span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//这里指定Controller扫描包路径</span></span><br><span class="line"><span class="comment">//                .apis(RequestHandlerSelectors.basePackage(&quot;com.github.xiaoymin.knife4j.controller&quot;))</span></span><br><span class="line">                <span class="comment">//这里指定扫描有ApiOperation注解的类</span></span><br><span class="line">                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))</span><br><span class="line">                <span class="comment">//所有路径</span></span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                <span class="comment">//不包含^/inner/.*的路径</span></span><br><span class="line">                <span class="comment">//.paths(input -&gt; !input.matches(&quot;^/inner/.*&quot;))</span></span><br><span class="line">                .build();</span><br><span class="line">        <span class="keyword">return</span> docket;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ApiInfo <span class="title function_">apiInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                .title(<span class="string">&quot;左拿先生的RESTful APIs&quot;</span>)</span><br><span class="line">                .description(<span class="string">&quot;构建RESTful APIs&quot;</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">&quot;https://znxs.vip&quot;</span>)</span><br><span class="line">                .contact(<span class="keyword">new</span> <span class="title class_">Contact</span>(<span class="string">&quot;左拿先生&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;https://znxs.vip&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;zonaznxs@163.com&quot;</span>))</span><br><span class="line">                .version(<span class="string">&quot;1.0&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="配置统一返回类-统一状态码-统一异常信息处理-Result"><a href="#配置统一返回类-统一状态码-统一异常信息处理-Result" class="headerlink" title="配置统一返回类 统一状态码 统一异常信息处理  Result"></a>配置统一返回类 统一状态码 统一异常信息处理  Result</h2><h2 id="配置自动执行-Job"><a href="#配置自动执行-Job" class="headerlink" title="配置自动执行 Job"></a>配置自动执行 Job</h2><h2 id="集成后端项目框架"><a href="#集成后端项目框架" class="headerlink" title="集成后端项目框架"></a>集成后端项目框架</h2><p>spring  boot</p><h2 id="文件上传下载方案"><a href="#文件上传下载方案" class="headerlink" title="文件上传下载方案"></a>文件上传下载方案</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 常用技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>鲁迪乌斯</title>
+      <link href="/2023/11/10/%E9%B2%81%E8%BF%AA%E4%B9%8C%E6%96%AF/"/>
+      <url>/2023/11/10/%E9%B2%81%E8%BF%AA%E4%B9%8C%E6%96%AF/</url>
+      
+        <content type="html"><![CDATA[<p>h</p><p><img src="https://blog.znxs.vip/study/ldws.jpg" class="lazyload placeholder" data-srcset="https://blog.znxs.vip/study/ldws.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="鲁迪"></p><p>你还记得当时看着鲁迪的时候  他在干什么吗  鲁迪能达到这样的高度，是怎么达到的呢  </p><p>日本动漫总是描述着短暂的进步，总是描述着一两分钟的画面，但是实际上就是十几年的努力，当你忘却你的formar的时候，鲁迪已经开始锻炼了   当你到达异世界的时候，能否完成你的从零开始的异世界生活呢？你能否像鲁迪一样，在异世界也要好好的活下去呢。</p><p>​现实世界中，也是如此，其实大部分人的遭遇跟鲁迪相似，毕竟只有百分之二的人能够享受运气成分带来的时代红利，只有百分之20的人，能够成为别人眼中所仰望的幸福，事与愿违以及阻难想必与你长存了，已经是老朋友了不是吗，这样的事情已经经历了许久了，不是吗？鲁迪能够重生之后，迅速明确自己的使命，确定目标，并坚定不移的走下去，这是他最大的品质。那么，你能像他那样，成为自己的主人吗？</p><p>​即便，自己心中已经有了答案；即便，你已经有了明确的目标；即便，你已经知道了如何去做；但是还是不能控制自己。</p><p><span>”好难啊“</span></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> https://blog.znxs.vip/study/ldws.jpg </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>1024程序员节</title>
       <link href="/2023/10/23/1024%E7%A8%8B%E5%BA%8F%E5%91%98%E8%8A%82/"/>
       <url>/2023/10/23/1024%E7%A8%8B%E5%BA%8F%E5%91%98%E8%8A%82/</url>
